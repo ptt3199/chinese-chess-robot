@@ -22,7 +22,9 @@ def move(x1, y1, x2, y2):
     d4 = 0.2 + 0.0043 * sqrt(2) * min(abs(x2 + 10), abs(y2 - 15)) + 0.0025 * (
             max(abs(x2 + 10), abs(y2 - 15)) - min(abs(x2 + 10), abs(y2 - 15)))
     opc.write(('Channel2.Device1.Y10', 0))
+    time.sleep(0.1)
     opc.write(('Channel2.Device1.Y7', 0))
+    time.sleep(0.1)
 
     # HOME to (1)
     opc.write(('Channel2.Device1.M2', True))
@@ -43,7 +45,9 @@ def move(x1, y1, x2, y2):
     opc.write(('Channel2.Device1.M1', True))
     time.sleep(d4)
     opc.write(('Channel2.Device1.Y10', 1))
+    time.sleep(0.1)
     opc.write(('Channel2.Device1.Y7', 1))
+    time.sleep(0.1)
 
 
 def capture(x1, y1, x2, y2):
@@ -56,7 +60,9 @@ def capture(x1, y1, x2, y2):
     d4 = 0.2 + 0.0043 * sqrt(2) * min(abs(x2 + 10), abs(y2 - 15)) + 0.0025 * (
             max(abs(x2 + 10), abs(y2 - 15)) - min(abs(x2 + 10), abs(y2 - 15)))
     opc.write(('Channel2.Device1.Y10', 0))
+    time.sleep(0.1)
     opc.write(('Channel2.Device1.Y7', 0))
+    time.sleep(0.1)
 
     # HOME to (2)
     opc.write(('Channel2.Device1.M4', True))
@@ -97,7 +103,9 @@ def capture(x1, y1, x2, y2):
     opc.write(('Channel2.Device1.M1', True))
     time.sleep(d4)
     opc.write(('Channel2.Device1.Y10', 1))
+    time.sleep(0.1)
     opc.write(('Channel2.Device1.Y7', 1))
+    time.sleep(0.2)
 
 
 """ Set up chess board """
@@ -112,6 +120,10 @@ def home2start(x1, y1):
     opc.write(('Channel2.Device1.M2', True))
     opc.write(('Channel2.Device1.M1', True))
     time.sleep(d2)
+    opc.write(('Channel2.Device1.Y10', 0))
+    time.sleep(0.1)
+    opc.write(('Channel2.Device1.Y7', 0))
+    time.sleep(0.1)
 
 
 def end2home(x2, y2):
@@ -123,7 +135,9 @@ def end2home(x2, y2):
     opc.write(('Channel2.Device1.M1', True))
     time.sleep(d4)
     opc.write(('Channel2.Device1.Y10', 1))
+    time.sleep(0.1)
     opc.write(('Channel2.Device1.Y7', 1))
+    time.sleep(0.1)
 
 
 def point2point(x1, y1, x2, y2):
@@ -182,9 +196,11 @@ def push_yellow_button():
 
 def check_green_button():
     d25 = opc.read('Channel2.Device1.D25')
+    time.sleep(0.1)
     return d25[0]
 
 
 def check_yellow_button():
     d26 = opc.read('Channel2.Device1.D26')
+    time.sleep(0.1)
     return d26[0]

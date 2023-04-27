@@ -61,15 +61,15 @@ pressLabel = Label(liveCamWindow, text='')
 
 
 def update_frame():
-    green_button = check_green_button()
-    yellow_button = check_yellow_button()
-
     global canvas, photo, input_image
     _, frame = capture.read()
     input_image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     frame = cv2.resize(input_image, dsize=None, fx=1 / 3, fy=1 / 3)
     photo = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(frame))
     canvas.create_image(0, 0, image=photo, anchor=tkinter.NW)
+
+    green_button = check_green_button()
+    yellow_button = check_yellow_button()
 
     if green_button != check_green_button():
         print('Setup Button pressed')
