@@ -1,18 +1,10 @@
-import cv2
-import numpy as np
-import tkinter
-
-from tkinter import *
-from tkinter.ttk import *
-
 """===================== Homemade library ===================="""
 from GUI_SettingMenu import *
 
 # from PLCControl.PLCControl import *
 #
-from DefineChessChamp import *
-# from PlayChess import *
-from SetupBoard import *
+# from PlayChess.PlayChess import *
+from PlayChess.SetupBoard import *
 
 # client_engine = Client(8080)
 """==========================================================="""
