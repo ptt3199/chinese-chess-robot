@@ -130,15 +130,13 @@ def validate_state(state):
                     if k_pos == 2:
                         return False
                     a_pos = 1
-                    if i > 2 or (i == 1 and j != 4) or (i == 2 and j == 4) or j < 3 or j > 5 \
-                            or (i == 0 and j == 4):
+                    if i > 2 or (i == 1 and j != 4) or (i == 2 and j == 4) or j < 3 or j > 5 or (i == 0 and j == 4):
                         return False
                 else:
                     if k_pos == 1:
                         return False
                     a_pos = 2
-                    if i < 7 or (i == 8 and j != 4) or (i == 7 and j == 4) or j < 3 or j > 5 \
-                            or (i == 9 and j == 4):
+                    if i < 7 or (i == 8 and j != 4) or (i == 7 and j == 4) or j < 3 or j > 5 or (i == 9 and j == 4):
                         return False
             elif state[i][j] == 'A':
                 if cA == 2:
@@ -149,15 +147,13 @@ def validate_state(state):
                     if k_pos == 1:
                         return False
                     a_pos = 2
-                    if i > 2 or (i == 1 and j != 4) or (i == 2 and j == 4) or j < 3 or j > 5 \
-                            or (i == 0 and j == 4):
+                    if i > 2 or (i == 1 and j != 4) or (i == 2 and j == 4) or j < 3 or j > 5 or (i == 0 and j == 4):
                         return False
                 else:
                     if k_pos == 2:
                         return False
                     a_pos = 1
-                    if i < 7 or (i == 8 and j != 4) or (i == 7 and j == 4) or j < 3 or j > 5 \
-                            or (i == 9 and j == 4):
+                    if i < 7 or (i == 8 and j != 4) or (i == 7 and j == 4) or j < 3 or j > 5 or (i == 9 and j == 4):
                         return False
             elif state[i][j] == 'e':
                 if ce == 2:
