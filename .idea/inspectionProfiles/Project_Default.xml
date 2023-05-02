@@ -1,0 +1,58 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyMethodMayBeStaticInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E501" />
+          <option value="E116" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N802" />
+          <option value="N806" />
+          <option value="N803" />
+          <option value="N813" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="cv2.imread" />
+          <option value="cv2.resize" />
+          <option value="cv2.imshow" />
+          <option value="cv2.waitKey" />
+          <option value="cv2.destroyAllWindows" />
+          <option value="cv2.cvtColor" />
+          <option value="cv2.COLOR_BGR2HSV" />
+          <option value="cv2.IMREAD_GRAYSCALE" />
+          <option value="cv2.inRange" />
+          <option value="cv2.medianBlur" />
+          <option value="cv2.COLOR_RGB2GRAY" />
+          <option value="cv2.HoughCircles" />
+          <option value="cv2.HOUGH_GRADIENT" />
+          <option value="cv2.circle" />
+          <option value="cv2.bitwise_and" />
+          <option value="cv2.threshold" />
+          <option value="cv2.THRESH_BINARY" />
+          <option value="cv2.destroyWindow" />
+          <option value="cv2.erode" />
+          <option value="cv2.COLOR_BGR2GRAY" />
+          <option value="ChineseChessGUI.Source.Controller.Controller.Model" />
+          <option value="ChineseChessGUI.Source.Controller.Controller.GameInfo" />
+          <option value="ChineseChessGUI.Source.Const.GuiConst.Utils" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="SpellCheckingInspection" enabled="false" level="TYPO" enabled_by_default="false">
+      <option name="processCode" value="true" />
+      <option name="processLiterals" value="true" />
+      <option name="processComments" value="true" />
+    </inspection_tool>
+  </profile>
+</component>

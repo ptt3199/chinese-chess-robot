@@ -5,10 +5,10 @@ def wrong_position(chess_x_image, chess_y_image):  # error 1
     x_fail, y_fail = False, False
     size = len(chess_x_image)
     for i in range(size):
-        for x in range(7):
+        for x in range(8):
             if x_rights[x] + error <= chess_x_image[i] <= x_rights[x + 1] - error:
                 x_fail = True
-        for y in range(8):
+        for y in range(9):
             if y_rights[y] + error <= chess_y_image[i] <= y_rights[y + 1] - error:
                 y_fail = True
     return x_fail and y_fail
@@ -29,7 +29,7 @@ def check_king_opposite(state, i, j, lowercase=True):
                 return False
 
 
-def validate_state(state):
+def valid_state(state):
     COLUMN, ROW = 9, 10
     k_pos = 0  # black king position =0 have not appeared King,=1 Black on Top,=2 Black on Bottom
     a_pos = 0  # black advisor position =0 have not appeared Avisor,=1 Black on Top,=2 Black on Bottom
@@ -227,3 +227,23 @@ def validate_state(state):
         return False
     else:
         return True
+
+
+def define_move(previous_state, state):
+    found_src, found_dst = 0, 0
+    src_x, src_y, dst_x, dst_y = '', 0, '', 0
+    for i in range(10):
+        for j in range(9):
+            if previous_state[i, j] != '.' and state[i][j] != '.':
+                src_x = chr(ord('a') + j - 1)
+                src_y = i
+                found_src += 1
+                if found_src > 1:
+                    return '', 0, '', 0
+            elif (previous_state[i, j] != '.' and previous_state[i][j] != state[i][j]) or (previous_state[i, j] == '.' and state[i][j] != '.'):
+                dst_x = chr(ord('a') + j - 1)
+                dst_y = i
+                found_dst += 1
+                if found_dst > 1:
+                    return '', 0, '', 0
+    return src_x, src_y, dst_x, dst_y

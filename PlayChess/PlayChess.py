@@ -7,6 +7,7 @@ from ValidateState import *
 """==================== Login to chess engine server ===================="""
 client_engine = Client(8080)
 ply = 5
+previous_state = ''
 
 
 def get_board(chess_x_image, chess_y_image, chess_int):
@@ -30,10 +31,16 @@ def get_board(chess_x_image, chess_y_image, chess_int):
 
 def play_chess(chess_x_image, chess_y_image, chess_int):
     if wrong_position(chess_x_image, chess_y_image):
-        print('Quân cờ đặt sai vị trí')
+        print('Quân cờ không đặt trên các đường giao')
         return None
 
     state, real_loc_x, real_loc_y = get_board(chess_x_image, chess_y_image, chess_int)
+    if not valid_state(state):
+        print('Trạng thái bàn cờ không hợp lệ: Thiếu - thừa quân hoặc quân không đúng vị trí cho phép')
+        return None
+    src_x, src_y, dst_x, dst_y = define_move(previous_state, state)
+    if src_x == '':
+        print('Ít hoặc nhiều hơn một nước đi')
     fen_send = matrix2fen(state)
     data = [fen_send + ' w', ply]
     client_engine.send(data)
@@ -55,5 +62,3 @@ def play_chess(chess_x_image, chess_y_image, chess_int):
     state[src_x][src_y] = '.'
     fen2matrix_cn(fen_receive, mov)
     print('Your turn!')
-
-
