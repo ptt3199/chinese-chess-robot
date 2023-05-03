@@ -6,7 +6,7 @@ raw_bottom = 1037
 raw_left = 540
 raw_right = 1453
 resolution = (1920, 1080)
-# need to scale to 902x1007
+# need to scale to 913x1017
 
 # save model
 model_path = ".\\RecognizeModel"

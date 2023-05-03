@@ -9,17 +9,15 @@ client_engine = Client(8080)
 ply = 5
 previous_state = ''
 
+# chua test
+def get_state(chess_x_image, chess_y_image, chess_int):
+    if not on_cross(chess_x_image, chess_y_image):
+        print('Quân cờ không đặt trên các đường giao')
+        return None
 
-def get_board(chess_x_image, chess_y_image, chess_int):
     size = len(chess_int)
-    # board = []
     state = [['.' for _ in range(9)] for _ in range(10)]
     real_loc_x, real_loc_y = [[0 for _ in range(9)] for _ in range(10)]
-    # for i in range(10):
-    #     row = []
-    #     for j in range(9):
-    #         row.append(".")
-    #     board.append(row)
     for i in range(size):
         x = round((chess_x_image[i] - margin_image) / chess_piece_size_image)
         y = round((chess_y_image[i] - margin_image) / chess_piece_size_image)
@@ -30,17 +28,10 @@ def get_board(chess_x_image, chess_y_image, chess_int):
 
 
 def play_chess(chess_x_image, chess_y_image, chess_int):
-    if wrong_position(chess_x_image, chess_y_image):
-        print('Quân cờ không đặt trên các đường giao')
-        return None
+    state, real_loc_x, real_loc_y = get_state(chess_x_image, chess_y_image, chess_int)
+    if not valid_move(previous_state, state):
+        print('Nước đi không hợp lệ')
 
-    state, real_loc_x, real_loc_y = get_board(chess_x_image, chess_y_image, chess_int)
-    if not valid_state(state):
-        print('Trạng thái bàn cờ không hợp lệ: Thiếu - thừa quân hoặc quân không đúng vị trí cho phép')
-        return None
-    src_x, src_y, dst_x, dst_y = define_move(previous_state, state)
-    if src_x == '':
-        print('Ít hoặc nhiều hơn một nước đi')
     fen_send = matrix2fen(state)
     data = [fen_send + ' w', ply]
     client_engine.send(data)

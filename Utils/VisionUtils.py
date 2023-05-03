@@ -1,7 +1,6 @@
 import cv2
 import numpy as np
 
-
 from Const.VisionConst import *
 
 
@@ -60,7 +59,9 @@ def fen2matrix(fen):
         elif e in CHESSMAN:
             state[i] = e
             i += 1
-    print(state.reshape(10, 9))
+    state = state.reshape(10, 9)
+    # print(state)
+    return state
 
 
 def fen2matrix_cn(fen, mov):

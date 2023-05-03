@@ -12,7 +12,7 @@ def define_chess_champ():
         data_receive = client_recognize.receive()
         if data_receive[0] == 'Done':
             break
-    data = np.loadtxt('.\\Camera\\data.csv', delimiter=',', dtype=int)
+    data = np.loadtxt('D:\\chinese-chess-robot\\Camera\\data.csv', delimiter=',', dtype=int)
     chess_x = data[:, 0]
     chess_y = data[:, 1]
     chess_int = (data[:, 2]).astype(int)

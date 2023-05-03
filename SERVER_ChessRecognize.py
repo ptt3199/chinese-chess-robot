@@ -13,7 +13,7 @@ from Utils.VisionUtils import *
 print('Chess Recognize Server: ON')
 server_recognize = Server(8082)
 """ Load model """
-model = load_model('.\\RecognizeModel\\model.h5')
+model = load_model('RecognizeModel\\model.h5')
 print("RecognizeModel loaded!------------------------------------------")
 print('Listening...')
 server_recognize.accept()
@@ -29,7 +29,9 @@ def define_chess_champ():
     """preprocessing image"""
     image = cv2.imread('.\\Camera\\temp.jpg')
     image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)  # Convert to gray
+    # image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
     image = calibrate_remap_image(image)  # Calibrate image
+    # cv2.imwrite('.\\Camera\\blah.jpg', image)
     image = image[top:bottom, left:right]  # Remove leftovers
     image = cv2.resize(image, (image_width, image_height))  # Need to rescale to 905:1010 = 368:411
     width, height = image.shape
