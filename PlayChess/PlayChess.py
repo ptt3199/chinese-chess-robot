@@ -9,6 +9,7 @@ client_engine = Client(8080)
 ply = 5
 previous_state = ''
 
+
 # chua test
 def get_state(chess_x_image, chess_y_image, chess_int):
     if not on_cross(chess_x_image, chess_y_image):
@@ -31,6 +32,7 @@ def play_chess(chess_x_image, chess_y_image, chess_int):
     state, real_loc_x, real_loc_y = get_state(chess_x_image, chess_y_image, chess_int)
     if not valid_move(previous_state, state):
         print('Nước đi không hợp lệ')
+        return None
 
     fen_send = matrix2fen(state)
     data = [fen_send + ' w', ply]
