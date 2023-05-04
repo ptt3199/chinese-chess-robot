@@ -253,6 +253,7 @@ def valid_move_horse(st, si, sj, di, dj):  # ok
     # Nếu không ở đúng vị trí so với nhau
     if (abs(si - di) == 2 and abs(sj - dj) != 1) or (abs(si - di) == 1 and abs(sj - dj) != 2):
         return False
+    # Nếu bị chặn
     if (si - 2 == di and st[si - 1][sj] != '.') \
             or (si + 2 == di and st[si + 1][sj] != '.') \
             or (sj - 2 == dj and st[si][sj - 1] != '.') \
@@ -305,12 +306,112 @@ def valid_move_cannon(st, si, sj, di, dj):  # ok
 
 
 def valid_move_king(st, si, sj, di, dj):
+    # Nếu không thẳng hàng thì sai
+    if si != di and sj != dj:
+        return False
     # Nếu đi khác 1 bước
     if (abs(si - di) != 1 and sj == dj) or (abs(sj - dj) != 1 and si == di):
         return False
     # Nếu lộ mặt tướng -> đã xét ở valid_position
     # Nếu đi vào ô bị chiếu
+    # 1. Chiếu bởi tốt đỏ
+    if (si + 1 == di and st[di - 1][dj] == 'P')\
+            or (dj == sj - 1 and st[di][dj - 1] == 'P') \
+            or (dj == sj + 1 and sr[di][dj + 1] == 'P'):
+        return False
+
+    # 2. Chiếu bởi mã đỏ (không viết logic phức tạp để tiện debug)
+    # 2 điểm i - 2
+    if di - 2 >= 0 and st[di - 1][dj] == '.' and (st[di - 2][dj - 1] == 'H' or st[di - 2][dj + 1] == 'H'):
+        return False
+    # 2 điểm i - 1
+    if di - 1 >= 0:
+        if st[di][dj - 1] == '.' and st[di - 1][dj - 2] == 'H':
+            return False
+        if st[di][dj + 1] == '.' and st[di - 1][dj + 2] == 'H':
+            return False
+    # 2 điểm i + 1
+    if st[di][dj - 1] == '.' and st[di + 1][dj - 2] == 'H':
+        return False
+    if st[di][dj + 1] == '.' and st[di + 1][dj + 2] == 'H':
+        return False
+    # 2 điểm i + 2
+    if st[di + 1][dj] == '.' and (st[di + 2][dj - 1] == 'H' or st[di + 2][dj + 1] == 'H'):
+        return False
+
+    # 3. Chiếu bởi xe đỏ
+    # Dò trục ngang
+    idj = dj - 1
+    while idj >= 0:
+        if st[di][idj] == 'R':
+            return False
+        if st[di][idj] == '.':
+            idj = idj - 1
+        else:
+            break
+    idj = dj + 1
+    while idj <= 9:
+        if st[di][idj] == 'R':
+            return False
+        if st[di][idj] == '.':
+            idj = idj + 1
+        else:
+            break
+    # Dò trục dọc
+    idi = di - 1
+    while idi >= 0:
+        if st[idi][dj] == 'R':
+            return False
+        if st[idi][dj] == '.':
+            idi = idi - 1
+        else:
+            break
+    idi = di + 1
+    while idi <= 10:
+        if st[idi][dj] == 'R':
+            return False
+        if st[idi][dj] == '.':
+            idi = idi + 1
+        else:
+            break
+
+    # 4. Chiếu bởi pháo đỏ
+    # Dò trục ngang
+    idj = dj - 1
+    count_champ = 0  # đếm số quân cờ trước khi gặp quân pháo
+    while idj >= 0:
+        if st[di][idj] == 'C' and count_champ == 1:
+            return False
+        idj = idj - 1
+        if st[di][idj] != '.':
+            count_champ += 1
+    idj = dj + 1
+    count_champ = 0  # đếm số quân cờ trước khi gặp quân pháo
+    while idj <= 9:
+        if st[di][idj] == 'C':
+            return False
+        idj = idj + 1
+        if st[di][idj] != '.':
+            count_champ += 1
+    # Dò trục dọc
+    idi = di - 1
+    count_champ = 0  # đếm số quân cờ trước khi gặp quân pháo
+    while idi >= 0:
+        if st[idi][dj] == 'C' and count_champ == 1:
+            return False
+        idi = idi - 1
+        if st[idi][dj] != '.':
+            count_champ += 1
+    idi = di + 1
+    count_champ = 0  # đếm số quân cờ trước khi gặp quân pháo
+    while idi <= 9:
+        if st[idi][dj] == 'C':
+            return False
+        idi = idi + 1
+        if st[idi][dj] != '.':
+            count_champ += 1
     return True
+
 
 def valid_move(previous_state, state):
     if not valid_position(state):
