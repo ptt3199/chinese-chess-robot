@@ -308,35 +308,42 @@ def valid_move_cannon(st, si, sj, di, dj):  # ok
 def valid_move_king(st, si, sj, di, dj):
     # Nếu không thẳng hàng thì sai
     if si != di and sj != dj:
+        print('Lỗi: Tướng không đi đường thẳng')
         return False
     # Nếu đi khác 1 bước
     if (abs(si - di) != 1 and sj == dj) or (abs(sj - dj) != 1 and si == di):
+        print('Lỗi: Tướng đi nhiều hơn 1 bước')
         return False
     # Nếu lộ mặt tướng -> đã xét ở valid_position
     # Nếu đi vào ô bị chiếu
-    # 1. Chiếu bởi tốt đỏ
-    if (si + 1 == di and st[di - 1][dj] == 'P')\
-            or (dj == sj - 1 and st[di][dj - 1] == 'P') \
-            or (dj == sj + 1 and sr[di][dj + 1] == 'P'):
+    # 1. Chiếu bởi tốt đỏ: tốt bên dưới, bên trái, bên phải
+    if st[di + 1][dj] == 'P' or st[di][dj - 1] == 'P' or st[di][dj + 1] == 'P':
+        print('Lỗi: Đi vào ô bị chiếu bởi tốt')
         return False
 
     # 2. Chiếu bởi mã đỏ (không viết logic phức tạp để tiện debug)
     # 2 điểm i - 2
     if di - 2 >= 0 and st[di - 1][dj] == '.' and (st[di - 2][dj - 1] == 'H' or st[di - 2][dj + 1] == 'H'):
+        print('Lỗi: Đi vào ô bị chiếu bởi mã')
         return False
     # 2 điểm i - 1
     if di - 1 >= 0:
         if st[di][dj - 1] == '.' and st[di - 1][dj - 2] == 'H':
+            print('Lỗi: Đi vào ô bị chiếu bởi mã')
             return False
         if st[di][dj + 1] == '.' and st[di - 1][dj + 2] == 'H':
+            print('Lỗi: Đi vào ô bị chiếu bởi mã')
             return False
     # 2 điểm i + 1
     if st[di][dj - 1] == '.' and st[di + 1][dj - 2] == 'H':
+        print('Lỗi: Đi vào ô bị chiếu bởi mã')
         return False
     if st[di][dj + 1] == '.' and st[di + 1][dj + 2] == 'H':
+        print('Lỗi: Đi vào ô bị chiếu bởi mã')
         return False
     # 2 điểm i + 2
     if st[di + 1][dj] == '.' and (st[di + 2][dj - 1] == 'H' or st[di + 2][dj + 1] == 'H'):
+        print('Lỗi: Đi vào ô bị chiếu bởi mã')
         return False
 
     # 3. Chiếu bởi xe đỏ
@@ -344,31 +351,38 @@ def valid_move_king(st, si, sj, di, dj):
     idj = dj - 1
     while idj >= 0:
         if st[di][idj] == 'R':
+            print('Lỗi: Đi vào ô bị chiếu bởi xe')
             return False
         if st[di][idj] == '.':
             idj = idj - 1
         else:
             break
+
     idj = dj + 1
-    while idj <= 9:
+    while idj <= 8:
         if st[di][idj] == 'R':
+            print('Lỗi: Đi vào ô bị chiếu bởi xe')
             return False
         if st[di][idj] == '.':
             idj = idj + 1
         else:
             break
+
     # Dò trục dọc
     idi = di - 1
     while idi >= 0:
         if st[idi][dj] == 'R':
+            print('Lỗi: Đi vào ô bị chiếu bởi xe')
             return False
         if st[idi][dj] == '.':
             idi = idi - 1
         else:
             break
+
     idi = di + 1
-    while idi <= 10:
+    while idi <= 8:
         if st[idi][dj] == 'R':
+            print('Lỗi: Đi vào ô bị chiếu bởi xe')
             return False
         if st[idi][dj] == '.':
             idi = idi + 1
@@ -381,41 +395,48 @@ def valid_move_king(st, si, sj, di, dj):
     count_champ = 0  # đếm số quân cờ trước khi gặp quân pháo
     while idj >= 0:
         if st[di][idj] == 'C' and count_champ == 1:
+            print('Lỗi: Đi vào ô bị chiếu bởi pháo')
             return False
-        idj = idj - 1
         if st[di][idj] != '.':
             count_champ += 1
+        idj = idj - 1
+
     idj = dj + 1
     count_champ = 0  # đếm số quân cờ trước khi gặp quân pháo
-    while idj <= 9:
-        if st[di][idj] == 'C':
+    while idj <= 8:
+        if st[di][idj] == 'C' and count_champ == 1:
+            print('Lỗi: Đi vào ô bị chiếu bởi pháo')
             return False
-        idj = idj + 1
         if st[di][idj] != '.':
             count_champ += 1
+        idj = idj + 1
+
     # Dò trục dọc
     idi = di - 1
     count_champ = 0  # đếm số quân cờ trước khi gặp quân pháo
     while idi >= 0:
         if st[idi][dj] == 'C' and count_champ == 1:
+            print('Lỗi: Đi vào ô bị chiếu bởi pháo')
             return False
-        idi = idi - 1
         if st[idi][dj] != '.':
             count_champ += 1
+        idi = idi - 1
+
     idi = di + 1
     count_champ = 0  # đếm số quân cờ trước khi gặp quân pháo
-    while idi <= 9:
-        if st[idi][dj] == 'C':
+    while idi <= 8:
+        if st[idi][dj] == 'C' and count_champ == 1:
+            print('Lỗi: Đi vào ô bị chiếu bởi pháo')
             return False
-        idi = idi + 1
         if st[idi][dj] != '.':
             count_champ += 1
+        idi = idi + 1
     return True
 
 
 def valid_move(previous_state, state):
     if not valid_position(state):
-        print('Trạng thái bàn cờ không hợp lệ: Thiếu - thừa quân hoặc quân không đúng vị trí cho phép')
+        print('Trạng thái bàn cờ không hợp lệ: Thừa quân hoặc quân không đúng vị trí cho phép')
         return False
 
     champ_name = ''
