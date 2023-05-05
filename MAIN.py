@@ -1,12 +1,9 @@
 """===================== Homemade library ===================="""
 from GUI_SettingMenu import *
+from Control.PlayChess import *
+from Control.SetupBoard import *
+from Const.VisionConst import *
 
-# from PLCControl.PLCControl import *
-#
-# from PlayChess.PlayChess import *
-from PlayChess.SetupBoard import *
-
-# client_engine = Client(8080)
 """==========================================================="""
 # go_first, game_type, level = get_setting()
 # print(go_first)
@@ -30,18 +27,24 @@ canvas.pack()
 
 def setup_board_button():
     cv2.imwrite('.\\Camera\\temp.jpg', input_image)
-    chess_x_image, chess_y_image, chess_int = define_chess_champ()
-    setup_board(chess_x_image, chess_y_image, chess_int)
+    cx, cy, cname = define_chess_champ()
+    setup_board(cx, cy, cname)
 
 
 setup_button = Button(liveCamWindow, text='Setup Chessboard', command=setup_board_button)
 setup_button.pack()
 
+previous_fen = ''
+
 
 def take_turn_button():
+    global previous_fen
     cv2.imwrite('.\\Camera\\temp.jpg', input_image)
-    chess_x_image, chess_y_image, chess_int = define_chess_champ()
-    play_chess(chess_x_image, chess_y_image, chess_int)
+    cx, cy, cname = define_chess_champ()
+    if previous_fen == '':
+        # previous_fen = 'rheakaehr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RHEAKAEHR'
+        previous_fen = 'rh1ak1er1/1R2a4/4e1h2/p1p5p/6p2/C8/P1P1H1P1P/1C7/8R/2EAKAE2'
+    previous_fen = play_chess(previous_fen, cx, cy, cname)
 
 
 turn_button = Button(liveCamWindow, text='Your turn', command=take_turn_button)
@@ -56,7 +59,13 @@ def update_frame():
     global canvas, photo, input_image
     _, frame = capture.read()
     input_image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-    frame = cv2.resize(input_image, dsize=None, fx=1 / 3, fy=1 / 3)
+
+    shown_image = input_image
+    # shown_image = calibrate_remap_image(input_image)
+    # left, right, top, bottom = raw_left, raw_right, raw_top, raw_bottom
+    # shown_image = shown_image[top:bottom, left:right]  # Remove leftovers
+
+    frame = cv2.resize(shown_image, dsize=None, fx=1 / 3, fy=1 / 3)
     photo = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(frame))
     canvas.create_image(0, 0, image=photo, anchor=tkinter.NW)
 

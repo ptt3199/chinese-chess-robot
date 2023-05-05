@@ -9,12 +9,14 @@ from Network.Network import *
 from Const.VisionConst import *
 from Utils.VisionUtils import *
 
-""" Load server """
-print('Chess Recognize Server: ON')
-server_recognize = Server(8082)
 """ Load model """
 model = load_model('RecognizeModel\\model.h5')
 print("RecognizeModel loaded!------------------------------------------")
+
+
+""" Load server """
+server_recognize = Server(8082)
+print('Chess Recognize Server: ON')
 print('Listening...')
 server_recognize.accept()
 print('Connected!')
@@ -29,10 +31,10 @@ def define_chess_champ():
     """preprocessing image"""
     image = cv2.imread('.\\Camera\\temp.jpg')
     image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)  # Convert to gray
-    # image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
     image = calibrate_remap_image(image)  # Calibrate image
-    # cv2.imwrite('.\\Camera\\blah.jpg', image)
+
     image = image[top:bottom, left:right]  # Remove leftovers
+    # cv2.imwrite('.\\Camera\\blah.jpg', image)
     image = cv2.resize(image, (image_width, image_height))  # Need to rescale to 905:1010 = 368:411
     width, height = image.shape
 
@@ -76,11 +78,16 @@ def define_chess_champ():
         output = model.predict(img)
         chess_int.append(output.argmax())
 
+    chess_x, chess_y = np.array(chess_x), np.array(chess_y)
+    chess_x_board = np.round(width_real / image_width * chess_x, 1)
+    chess_y_board = np.round(409 - height_real / image_height * chess_y, 1)
+    chess_x_board, chess_y_board = fix_real(chess_x_board, chess_y_board)
+
     size = len(chess_int)
     with open('.\\Camera\\data.csv', 'w', encoding='UTF8') as f:
         writer = csv.writer(f)
         for i in range(size):
-            writer.writerow([str(chess_x[i]), str(chess_y[i]), str(chess_int[i])])
+            writer.writerow([str(chess_x_board[i]), str(chess_y_board[i]), str(chess_int[i])])
     print('Done Recognizing', len(chess_int), 'found')
 
 

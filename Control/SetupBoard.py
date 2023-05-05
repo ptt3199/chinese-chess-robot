@@ -4,7 +4,7 @@ from math import sqrt
 from Const.VisionConst import chess_eng
 from CalibrateCamera.Calibrate import *
 from PLCControl.PLCControl import *
-from DefineChessChamp import *
+from Control.DefineChessChamp import *
 
 #                r    h    e    a    k    a    e    h    r    c    c    p    p    p    p    p    P    P    P    P    P    C    C    R   H   E    A    K    A    E    H    R
 desx = np.array([22,  61,  102, 143, 184, 225, 266, 307, 348, 61,  307, 20,  102, 184, 266, 348, 20,  102, 184, 266, 348, 61,  307, 22, 61, 102, 143, 184, 225, 266, 307, 348])
@@ -15,11 +15,8 @@ min_dis_chesschamp = 36
 maxint = 2000
 
 
-def setup_board(chess_x_image, chess_y_image, chess_int):
-    chess_x = np.round(width_real / image_width * chess_x_image, 1)
-    chess_y = np.round(-1 * height_real / image_height * (chess_y_image - image_height), 1)
-    srcx, srcy = fix_real(chess_x, chess_y)
-    srcname = np.copy(chess_int)
+def setup_board(chess_x_board, chess_y_board, chess_name):
+    srcx, srcy, srcname = np.copy(chess_x_board), np.copy(chess_y_board), np.copy(chess_name)
     size = len(srcname)
 
     # arrange: danh sách từ tung độ nhỏ đến tung độ lớn
@@ -117,5 +114,5 @@ def setup_board(chess_x_image, chess_y_image, chess_int):
 
 
 """for debugging"""
-chess_x_image, chess_y_image, chess_int = define_chess_champ()
-setup_board(chess_x_image, chess_y_image, chess_int)
+# chess_x_image, chess_y_image, chess_int = define_chess_champ()
+# setup_board(chess_x_image, chess_y_image, chess_int)
