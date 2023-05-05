@@ -421,12 +421,14 @@ def valid_move_elephant(st, si, sj, di, dj):  # ok
     return True
 
 
+# noinspection PyUnusedLocal
 def valid_move_advisor(st, si, sj, di, dj):  # ok
     if abs(si - di) != 1 or abs(sj - dj) != 1:
         return False
     return True
 
 
+# noinspection PyUnusedLocal
 def valid_move_pawn(st, si, sj, di, dj):
     # chỉ xét quân đen (quân của người chơi)
     if (si + 1 == di and sj == dj) or ((si == di) and (si > 4) and abs(sj - dj) == 1):
@@ -517,7 +519,7 @@ def valid_move(previous_state, state):
                 else:
                     print('Lỗi: Nước đi khiến Tướng bị chiếu')
                     return False
-    print('Người đi: ', champ_name, (src_i, src_j),'->', (dst_i, dst_j))
+    print('Người đi: ', champ_name, (src_i, src_j), '->', (dst_i, dst_j))
     if champ_name.capitalize() == 'R':
         return valid_move_rook(previous_state, src_i, src_j, dst_i, dst_j)
     if champ_name.capitalize() == 'H':

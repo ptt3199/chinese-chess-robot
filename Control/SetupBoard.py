@@ -61,15 +61,20 @@ def setup_board(chess_x_board, chess_y_board, chess_name):
 
     # def make_short_list(name):
     #     if name =
+    # noinspection PyShadowingNames
     def process_move(u):
         short_list = [v for v in range(size) if desname[v] == srcname[u] and available_destination[v] and num_conflict_with[v] == 0]
         # print(chess_eng[srcname[u]], short_list)
+        v_save = -1
         min_dis = maxint
         for v in short_list:
             dis1 = distance_s2d(u, v)
             if dis1 < min_dis:
                 min_dis = dis1
                 v_save = v
+        if v_save is None:
+            print('Lỗi xếp cờ')
+            exit()
         available_destination[v_save] = False
         in_right_place.append(u)
         print(chess_eng[srcname[u]], (srcx[u], srcy[u]), '->', (desx[v_save], desy[v_save]))

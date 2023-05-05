@@ -63,7 +63,7 @@ def play_chess(previous_fen, chess_x_board, chess_y_board, chess_name):
     state[src_x][src_y] = '.'
     print('Trạng thái mới: ', fen_receive)
     fen2matrix_cn(fen_receive, mov)
-    print('Your turn!')
+    print('Lượt người chơi!')
     print('=====================================')
     return matrix2fen(state)
 
