@@ -49,15 +49,15 @@ def play_chess(previous_fen, chess_x_board, chess_y_board, chess_name):
     src_x, src_y, dst_x, dst_y = move_in_state(mov)
     print('Nước đi của máy: ', state[src_x][src_y], (src_x, src_y), '->', (dst_x, dst_y))
 
-    # x1, y1 = real_loc_y[src_x][src_y], real_loc_x[src_x][src_y]
-    # if state[dst_x][dst_y] == '.':
-    #     x2, y2 = dst_y * 41 + 20, (9 - dst_x) * 41 + 20
-    #     print('Move from ', (x1, y1), 'to', (x2, y2))
-    #     move(x1, y1, x2, y2)
-    # else:
-    #     x2, y2 = real_loc_y[dst_x][dst_y], real_loc_x[dst_x][dst_y]
-    #     print('Capture from ', (x1, y1), 'to', (x2, y2))
-    #     capture(x1, y1, x2, y2)
+    x1, y1 = real_loc_y[src_x][src_y], real_loc_x[src_x][src_y]
+    if state[dst_x][dst_y] == '.':
+        x2, y2 = dst_y * 41 + 20, (9 - dst_x) * 41 + 20
+        print('Move from ', (x1, y1), 'to', (x2, y2))
+        move(x1, y1, x2, y2)
+    else:
+        x2, y2 = real_loc_y[dst_x][dst_y], real_loc_x[dst_x][dst_y]
+        print('Capture from ', (x1, y1), 'to', (x2, y2))
+        capture(x1, y1, x2, y2)
 
     state[dst_x][dst_y] = state[src_x][src_y]
     state[src_x][src_y] = '.'
