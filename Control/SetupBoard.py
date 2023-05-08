@@ -11,7 +11,7 @@ desx = np.array([22,  61,  102, 143, 184, 225, 266, 307, 348, 61,  307, 20,  102
 desy = np.array([387, 387, 387, 387, 387, 387, 387, 387, 387, 307, 307, 266, 266, 266, 266, 266, 143, 143, 143, 143, 143, 102, 102, 22, 20, 21,  21,  21,  21,  21,  21,  21])
 desname = np.array([2, 5,  3,   0,   4,   0,   3,   5,   2,   1,   1,   6,   6,   6,   6,   6,   13,  13,  13,  13,  13,  8,   8,   9,  12, 10,  7,   11,  7,   10,  12,  9])
 prio = np.array([5, 4, 5, 5, 5, 5, 3, 0, 1, 0, 0, 0, 0, 2])
-min_dis_chesschamp = 36
+min_dis_chesschamp = 25
 maxint = 2000
 
 
@@ -89,7 +89,7 @@ def setup_board(chess_x_board, chess_y_board, chess_name):
     setup_list = []
 
     for u in range(size):
-        if srcname[u] not in [1, 6, 8, 13]:
+        if srcname[u] not in [1, 6, 8, 13] and u not in in_right_place:
             remove_conflict(u)
             process_move(u)
     print('------------------------')

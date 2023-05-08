@@ -39,7 +39,6 @@ previous_fen = ''
 
 def take_turn_button():
     global previous_fen
-    opc.write(('Channel2.Device1.Y7', 0))
     cv2.imwrite('.\\Camera\\temp.jpg', input_image)
     cx, cy, cname = define_chess_champ()
     if previous_fen == '':

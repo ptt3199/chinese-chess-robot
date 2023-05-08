@@ -4842,3 +4842,18 @@
 05/08/2023 11:46:20 AM Chess Engine: the max highest depth by quiescence search is :13
 05/08/2023 11:46:20 AM Chess Engine: the number of searched node is :184775
 05/08/2023 11:46:20 AM Chess Engine: send move to client:18244<-----------------------------------
+05/08/2023 01:43:22 PM Chess Engine: Receive FEN from client: rheakaehr/9/1c2c4/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RHEAKAEHR w<----------------------------------
+05/08/2023 01:43:22 PM Chess Engine: the max fixed depth is :5
+05/08/2023 01:43:22 PM Chess Engine: the max highest depth by quiescence search is :0
+05/08/2023 01:43:22 PM Chess Engine: the number of searched node is :0
+05/08/2023 01:43:22 PM Chess Engine: send move to client:42436<-----------------------------------
+05/08/2023 01:44:17 PM Chess Engine: Receive FEN from client: rheakaehr/9/1c2c4/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RHEAKAEHR w<----------------------------------
+05/08/2023 01:44:17 PM Chess Engine: the max fixed depth is :5
+05/08/2023 01:44:17 PM Chess Engine: the max highest depth by quiescence search is :0
+05/08/2023 01:44:17 PM Chess Engine: the number of searched node is :0
+05/08/2023 01:44:17 PM Chess Engine: send move to client:43466<-----------------------------------
+05/08/2023 01:45:16 PM Chess Engine: Receive FEN from client: rheakae1r/9/1c2c1h2/p1p1p1p1p/9/9/P1P1P1P1P/1C4HC1/9/RHEAKAE1R w<----------------------------------
+05/08/2023 01:45:16 PM Chess Engine: the max fixed depth is :5
+05/08/2023 01:45:16 PM Chess Engine: the max highest depth by quiescence search is :0
+05/08/2023 01:45:16 PM Chess Engine: the number of searched node is :0
+05/08/2023 01:45:16 PM Chess Engine: send move to client:51915<-----------------------------------

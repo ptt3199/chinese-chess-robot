@@ -32,12 +32,19 @@ def get_state(chess_x_board, chess_y_board, chess_name):
 
 
 def play_chess(previous_fen, chess_x_board, chess_y_board, chess_name):
+    opc.write(('Channel2.Device1.Y7', 0))  # tắt đèn vàng
+
     state, real_loc_x, real_loc_y = get_state(chess_x_board, chess_y_board, chess_name)
     previous_state = fen2matrix(previous_fen)
     if state is None or not valid_move(previous_state, state):
         print('Nước đi không hợp lệ')
         print('===============================')
+
+        opc.write(('Channel2.Device1.Y11', 1))  # bật đèn đỏ báo nước đi sai
+
         return previous_fen
+
+    opc.write(('Channel2.Device1.Y11', 0))  # tắt đèn báo nước đi sai nếu nó đang bật
 
     print('Trạng thái hiện tại:', matrix2fen(state))
     print(state)
@@ -58,6 +65,7 @@ def play_chess(previous_fen, chess_x_board, chess_y_board, chess_name):
         x2, y2 = real_loc_y[dst_x][dst_y], real_loc_x[dst_x][dst_y]
         print('Capture from ', (x1, y1), 'to', (x2, y2))
         capture(x1, y1, x2, y2)
+    opc.write(('Channel2.Device1.Y7', 1))  # bật đèn lượt người chơi
 
     state[dst_x][dst_y] = state[src_x][src_y]
     state[src_x][src_y] = '.'
@@ -65,6 +73,7 @@ def play_chess(previous_fen, chess_x_board, chess_y_board, chess_name):
     fen2matrix_cn(fen_receive, mov)
     print('Lượt người chơi!')
     print('=====================================')
+
     return matrix2fen(state)
 
 # for debugging
