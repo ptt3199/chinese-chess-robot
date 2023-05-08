@@ -9,7 +9,7 @@ from Control.DefineChessChamp import *
 
 """==================== Login to chess engine server ===================="""
 client_engine = Client(8080)
-ply = 5
+# ply = 5
 
 
 # chua test
@@ -31,8 +31,8 @@ def get_state(chess_x_board, chess_y_board, chess_name):
     return np.array(state), real_loc_x, real_loc_y
 
 
-def play_chess(previous_fen, chess_x_board, chess_y_board, chess_name):
-    opc.write(('Channel2.Device1.Y7', 0))  # tắt đèn vàng
+def play_chess(previous_fen, chess_x_board, chess_y_board, chess_name, ply=5, go_first='w'):
+    opc.write(('Channel2.Device1.Y7', 0))  # tắt đèn vàng báo đã bấm nút
 
     state, real_loc_x, real_loc_y = get_state(chess_x_board, chess_y_board, chess_name)
     previous_state = fen2matrix(previous_fen)
@@ -49,7 +49,10 @@ def play_chess(previous_fen, chess_x_board, chess_y_board, chess_name):
     print('Trạng thái hiện tại:', matrix2fen(state))
     print(state)
     fen_send = matrix2fen(state)
-    data = [fen_send + ' w', ply]
+    if go_first == 0:
+        data = [fen_send + ' w', ply]
+    else:
+        data = [fen_send + ' b', ply]
     client_engine.send(data)
 
     [fen_receive, mov] = client_engine.receive()

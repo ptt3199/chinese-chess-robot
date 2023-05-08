@@ -5,12 +5,18 @@ from Control.SetupBoard import *
 from Const.VisionConst import *
 
 """==========================================================="""
-# go_first, game_type, level = get_setting()
-# print(go_first)
-# print(game_type)
-# print(level)
+go_first, game_type, level = get_setting()
+print(go_first)
+print(game_type)
+print(level)
 
-
+if level == 1:
+    ply = 3
+elif level == 2:
+    ply = 6
+elif level == 3:
+    ply = 9
+"""==========================================================="""
 liveCamWindow = Tk()
 liveCamWindow.title('Live camera')
 
@@ -44,7 +50,7 @@ def take_turn_button():
     if previous_fen == '':
         previous_fen = 'rheakaehr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RHEAKAEHR'
         # previous_fen = 'rh1ak1er1/1R2a4/4e1h2/p1p5p/6p2/C8/P1P1H1P1P/1C7/8R/2EAKAE2'
-    previous_fen = play_chess(previous_fen, cx, cy, cname)
+    previous_fen = play_chess(previous_fen, cx, cy, cname, ply, go_first)
 
 
 turn_button = Button(liveCamWindow, text='Your turn', command=take_turn_button)
@@ -61,9 +67,6 @@ def update_frame():
     input_image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
     shown_image = input_image
-    # shown_image = calibrate_remap_image(input_image)
-    # left, right, top, bottom = raw_left, raw_right, raw_top, raw_bottom
-    # shown_image = shown_image[top:bottom, left:right]  # Remove leftovers
 
     frame = cv2.resize(shown_image, dsize=None, fx=1 / 3, fy=1 / 3)
     photo = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(frame))
