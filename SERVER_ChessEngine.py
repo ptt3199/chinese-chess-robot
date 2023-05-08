@@ -16,7 +16,7 @@ while True:
     depth = data[1]
     logger.info("Receive FEN from client: " + fen + "<----------------------------------")
 
-    searchObj = Search(fen, 5)
+    searchObj = Search(fen, depth)
     # move = searchObj.search_root()
     move = searchObj.interative_depth_first_search()
     # move = searchObj.search_root_alpha_beta_tt(-MATE_VALUE, MATE_VALUE)

@@ -6,16 +6,9 @@ from Const.VisionConst import *
 
 """==========================================================="""
 go_first, game_type, level = get_setting()
-print(go_first)
-print(game_type)
-print(level)
-
-if level == 1:
-    ply = 3
-elif level == 2:
-    ply = 6
-elif level == 3:
-    ply = 9
+# print(go_first)
+# print(game_type)
+# print(level)
 """==========================================================="""
 liveCamWindow = Tk()
 liveCamWindow.title('Live camera')
@@ -49,8 +42,8 @@ def take_turn_button():
     cx, cy, cname = define_chess_champ()
     if previous_fen == '':
         previous_fen = 'rheakaehr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RHEAKAEHR'
-        # previous_fen = 'rh1ak1er1/1R2a4/4e1h2/p1p5p/6p2/C8/P1P1H1P1P/1C7/8R/2EAKAE2'
-    previous_fen = play_chess(previous_fen, cx, cy, cname, ply, go_first)
+        previous_fen = 'r1ek1a3/1R2a3/4c3e/p1p1C3p/9/9/P1H1H1p1P/7C1/9/2EAKAE2'
+    previous_fen = play_chess(previous_fen, cx, cy, cname, level, go_first)
 
 
 turn_button = Button(liveCamWindow, text='Your turn', command=take_turn_button)

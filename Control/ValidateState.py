@@ -1,4 +1,4 @@
-# chưa test
+
 def on_cross(chess_x_image, chess_y_image):  # kiểm tra quân cờ có nằm trên đường giao không
     x_lines = [20, 61, 102, 143, 184, 225, 266, 307, 348]
     y_lines = [20, 61, 102, 143, 184, 225, 266, 307, 348, 389]
@@ -84,6 +84,7 @@ def valid_position(state):  # kiểm tra quân cờ có đúng số lượng, n�
                     cK += 1
                 if i < 3:
                     if a_pos == 2 or e_pos == 2 or k_pos == 2:
+                        print('Lỗi vị trí: Sĩ, Tượng, Tướng không ở đúng phía')
                         return False
                     k_pos = 1  # black king on Top of Board
                     if j < 3 or j > 5:
@@ -93,14 +94,17 @@ def valid_position(state):  # kiểm tra quân cờ có đúng số lượng, n�
                         return False
                 elif i > 6:
                     if a_pos == 1 or e_pos == 1 or k_pos == 1:
+                        print('Lỗi vị trí: Sĩ, Tượng, Tướng không ở đúng phía')
                         return False
                     k_pos = 2
                     if j < 3 or j > 5:
+                        print('Lỗi vị trí: Sĩ, Tượng, Tướng ra khỏi cung')
                         return False
                     elif check_king_opposite(state, i, j, False):
                         print('Lỗi vị trí: Lộ mặt tướng')
                         return False
                 else:
+                    print('Lỗi vị trí: Sĩ, Tượng, Tướng ra khỏi cung')
                     return False
             elif state[i][j] == 'K':
                 if cK == 2:
@@ -110,17 +114,22 @@ def valid_position(state):  # kiểm tra quân cờ có đúng số lượng, n�
                     cK += 1
                 if i < 3:
                     if a_pos == 1 or e_pos == 1 or k_pos == 1:
+                        print('Lỗi vị trí: Sĩ, Tượng, Tướng không ở đúng phía')
                         return False
                     k_pos = 2
                     if j < 3 or j > 5:
+                        print('Lỗi vị trí: Sĩ, Tượng, Tướng ra khỏi cung')
                         return False
                 elif i > 6:
                     if a_pos == 2 or e_pos == 2 or k_pos == 2:
+                        print('Lỗi vị trí: Sĩ, Tượng, Tướng không ở đúng phía')
                         return False
                     k_pos = 1
                     if j < 3 or j > 5:
+                        print('Lỗi vị trí: Sĩ, Tượng, Tướng ra khỏi cung')
                         return False
                 else:
+                    print('Lỗi vị trí: Sĩ, Tượng, Tướng ra khỏi cung')
                     return False
             elif state[i][j] == 'a':
                 if ca == 2:
@@ -130,15 +139,19 @@ def valid_position(state):  # kiểm tra quân cờ có đúng số lượng, n�
                     ca += 1
                 if i < 3:
                     if k_pos == 2:
+                        print('Lỗi vị trí: Sĩ không ở đúng phía')
                         return False
                     a_pos = 1
                     if i > 2 or (i == 1 and j != 4) or (i == 2 and j == 4) or j < 3 or j > 5 or (i == 0 and j == 4):
+                        print('Lỗi vị trí: Sĩ không ở trong cung')
                         return False
                 else:
                     if k_pos == 1:
+                        print('Lỗi vị trí: Sĩ không ở đúng phía')
                         return False
                     a_pos = 2
                     if i < 7 or (i == 8 and j != 4) or (i == 7 and j == 4) or j < 3 or j > 5 or (i == 9 and j == 4):
+                        print('Lỗi vị trí: Sĩ không ở trong cung')
                         return False
             elif state[i][j] == 'A':
                 if cA == 2:
@@ -148,15 +161,19 @@ def valid_position(state):  # kiểm tra quân cờ có đúng số lượng, n�
                     cA += 1
                 if i < 3:
                     if k_pos == 1:
+                        print('Lỗi vị trí: Sĩ không ở đúng phía')
                         return False
                     a_pos = 2
                     if i > 2 or (i == 1 and j != 4) or (i == 2 and j == 4) or j < 3 or j > 5 or (i == 0 and j == 4):
+                        print('Lỗi vị trí: Sĩ không ở trong cung')
                         return False
                 else:
                     if k_pos == 2:
+                        print('Lỗi vị trí: Sĩ không ở đúng phía')
                         return False
                     a_pos = 1
                     if i < 7 or (i == 8 and j != 4) or (i == 7 and j == 4) or j < 3 or j > 5 or (i == 9 and j == 4):
+                        print('Lỗi vị trí: Sĩ không ở trong cung')
                         return False
             elif state[i][j] == 'e':
                 if ce == 2:
@@ -166,22 +183,30 @@ def valid_position(state):  # kiểm tra quân cờ có đúng số lượng, n�
                     ce += 1
                 if i < 5:
                     if k_pos == 2:
+                        print('Lỗi vị trí: Tượng không ở đúng phía')
                         return False
                     if i == 1 or i == 3:
+                        print('Lỗi vị trí: Tượng không ở đúng vị trí đi được')
                         return False
                     elif (i == 0 or i == 4) and j != 2 and j != 6:
+                        print('Lỗi vị trí: Tượng không ở đúng vị trí đi được')
                         return False
                     elif i == 2 and j != 0 and j != 4 and j != 8:
+                        print('Lỗi vị trí: Tượng không ở đúng vị trí đi được')
                         return False
                     e_pos = 1
                 elif i > 4:
                     if k_pos == 1:
+                        print('Lỗi vị trí: Tượng không ở đúng phía')
                         return False
                     elif i == 8 or i == 6:
+                        print('Lỗi vị trí: Tượng không ở đúng vị trí đi được')
                         return False
                     elif (i == 9 or i == 5) and j != 2 and j != 6:
+                        print('Lỗi vị trí: Tượng không ở đúng vị trí đi được')
                         return False
                     elif i == 7 and j != 0 and j != 4 and j != 8:
+                        print('Lỗi vị trí: Tượng không ở đúng vị trí đi được')
                         return False
                     e_pos = 2
             elif state[i][j] == 'E':
@@ -535,3 +560,12 @@ def valid_move(previous_state, state):
     if champ_name.capitalize() == 'P':
         return valid_move_pawn(previous_state, src_i, src_j, dst_i, dst_j)
     return False
+
+
+#  for debugging
+from Utils.VisionUtils import *
+pfen = 'r1e1ka3/1R2a4/4c3e/p1p1C3p/9/9/P1H1H1p1P/7C1/9/2EAKAE2'
+pst = fen2matrix(pfen)
+fen = 'r1ek1a3/1R2a4/4c3e/p1p1C3p/9/9/P1H1H1p1P/7C1/9/2EAKAE2'
+st = fen2matrix(fen)
+valid_move(pst, st)

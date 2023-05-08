@@ -9,10 +9,8 @@ from Control.DefineChessChamp import *
 
 """==================== Login to chess engine server ===================="""
 client_engine = Client(8080)
-# ply = 5
 
 
-# chua test
 def get_state(chess_x_board, chess_y_board, chess_name):
     print('Get state:....')
     srcx, srcy, srcname = np.copy(chess_x_board), np.copy(chess_y_board), np.copy(chess_name)
@@ -31,7 +29,7 @@ def get_state(chess_x_board, chess_y_board, chess_name):
     return np.array(state), real_loc_x, real_loc_y
 
 
-def play_chess(previous_fen, chess_x_board, chess_y_board, chess_name, ply=5, go_first='w'):
+def play_chess(previous_fen, chess_x_board, chess_y_board, chess_name, level=1, go_first=0):
     opc.write(('Channel2.Device1.Y7', 0))  # tắt đèn vàng báo đã bấm nút
 
     state, real_loc_x, real_loc_y = get_state(chess_x_board, chess_y_board, chess_name)
@@ -48,7 +46,15 @@ def play_chess(previous_fen, chess_x_board, chess_y_board, chess_name, ply=5, go
 
     print('Trạng thái hiện tại:', matrix2fen(state))
     print(state)
+
     fen_send = matrix2fen(state)
+    ply = 5  # gía trị mặc định
+    if level == 0:
+        ply = 3
+    elif level == 1:
+        ply = 6
+    elif level == 2:
+        ply = 9
     if go_first == 0:
         data = [fen_send + ' w', ply]
     else:
@@ -79,6 +85,5 @@ def play_chess(previous_fen, chess_x_board, chess_y_board, chess_name, ply=5, go
 
     return matrix2fen(state)
 
-# for debugging
-# chess_x_image, chess_y_image, chess_int = define_chess_champ()
-# play_chess(chess_x_image, chess_y_image, chess_int)
+
+
