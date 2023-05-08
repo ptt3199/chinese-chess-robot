@@ -563,9 +563,9 @@ def valid_move(previous_state, state):
 
 
 #  for debugging
-from Utils.VisionUtils import *
-pfen = 'r1e1ka3/1R2a4/4c3e/p1p1C3p/9/9/P1H1H1p1P/7C1/9/2EAKAE2'
-pst = fen2matrix(pfen)
-fen = 'r1ek1a3/1R2a4/4c3e/p1p1C3p/9/9/P1H1H1p1P/7C1/9/2EAKAE2'
-st = fen2matrix(fen)
-valid_move(pst, st)
+# from Utils.VisionUtils import *
+# pfen = 'r1e1ka3/1R2a4/4c3e/p1p1C3p/9/9/P1H1H1p1P/7C1/9/2EAKAE2'
+# pst = fen2matrix(pfen)
+# fen = 'r1ek1a3/1R2a4/4c3e/p1p1C3p/9/9/P1H1H1p1P/7C1/9/2EAKAE2'
+# st = fen2matrix(fen)
+# valid_move(pst, st)
