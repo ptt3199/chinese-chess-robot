@@ -26,17 +26,17 @@ def get_setting():
     button = Radiobutton(welcomeWindow, text='Computer', variable=var, value=2, command=lambda value=2: sel1(2))
     button.grid(column=2, row=0, sticky=W)
 
-    def sel2(i):
-        global game_type
-        game_type = i
-
-    label = tkinter.Label(welcomeWindow, text='GAME TYPE')
-    label.grid(column=0, row=1, sticky=W)
-    var = IntVar()
-    button = Radiobutton(welcomeWindow, text='Classic', variable=var, value=1, command=lambda value=1: sel2(1))
-    button.grid(column=1, row=1, sticky=W)
-    button = Radiobutton(welcomeWindow, text='Challenging', variable=var, value=2, command=lambda value=2: sel2(2))
-    button.grid(column=2, row=1, sticky=W)
+    # def sel2(i):
+    #     global game_type
+    #     game_type = i
+    #
+    # label = tkinter.Label(welcomeWindow, text='GAME TYPE')
+    # label.grid(column=0, row=1, sticky=W)
+    # var = IntVar()
+    # button = Radiobutton(welcomeWindow, text='Classic', variable=var, value=1, command=lambda value=1: sel2(1))
+    # button.grid(column=1, row=1, sticky=W)
+    # button = Radiobutton(welcomeWindow, text='Challenging', variable=var, value=2, command=lambda value=2: sel2(2))
+    # button.grid(column=2, row=1, sticky=W)
 
     def sel3(i):
         global level

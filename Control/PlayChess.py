@@ -5,7 +5,7 @@ from Network.Network import *
 from Control.ValidateState import *
 
 # for debugging
-from Control.DefineChessChamp import *
+# from Control.DefineChessChamp import *
 
 """==================== Login to chess engine server ===================="""
 client_engine = Client(8080)
@@ -29,9 +29,7 @@ def get_state(chess_x_board, chess_y_board, chess_name):
     return np.array(state), real_loc_x, real_loc_y
 
 
-def play_chess(previous_fen, chess_x_board, chess_y_board, chess_name, level=1, go_first=0):
-    opc.write(('Channel2.Device1.Y7', 0))  # tắt đèn vàng báo đã bấm nút
-
+def play_chess(previous_fen, chess_x_board, chess_y_board, chess_name, level=2, go_first=1):
     state, real_loc_x, real_loc_y = get_state(chess_x_board, chess_y_board, chess_name)
     previous_state = fen2matrix(previous_fen)
     if state is None or not valid_move(previous_state, state):
@@ -49,13 +47,13 @@ def play_chess(previous_fen, chess_x_board, chess_y_board, chess_name, level=1, 
 
     fen_send = matrix2fen(state)
     ply = 5  # gía trị mặc định
-    if level == 0:
+    if level == 1:
         ply = 3
-    elif level == 1:
-        ply = 6
     elif level == 2:
+        ply = 6
+    elif level == 3:
         ply = 9
-    if go_first == 0:
+    if go_first == 1:
         data = [fen_send + ' w', ply]
     else:
         data = [fen_send + ' b', ply]
@@ -84,6 +82,3 @@ def play_chess(previous_fen, chess_x_board, chess_y_board, chess_name, level=1, 
     print('=====================================')
 
     return matrix2fen(state)
-
-
-

@@ -204,6 +204,3 @@ def check_yellow_button():
     d26 = opc.read('Channel2.Device1.D26')
     time.sleep(0.1)
     return d26[0]
-
-
-# move(184, 184, 184, 225)

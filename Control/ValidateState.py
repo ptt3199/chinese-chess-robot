@@ -516,6 +516,7 @@ def valid_move(previous_state, state):
                 found_src += 1
                 if found_src > 1:
                     print('Nhiều hơn 1 nước đi')
+                    print('src', src_i, src_j)
                     return False
             elif (previous_state[i][j] != '.' and previous_state[i][j] != state[i][j]) or (
                     previous_state[i][j] == '.' and state[i][j] != '.'):
@@ -523,6 +524,7 @@ def valid_move(previous_state, state):
                 found_dst += 1
                 if found_dst > 1:
                     print('Nhiều hơn 1 nước đi')
+                    print('dst', dst_i, dst_j)
                     return False
     if champ_name == '':
         return False

@@ -6,9 +6,12 @@ from Const.VisionConst import *
 
 """==========================================================="""
 go_first, game_type, level = get_setting()
-# print(go_first)
-# print(game_type)
-# print(level)
+print(go_first)
+print(game_type)
+print(level)
+
+opc.write(('Channel2.Device1.Y11', 0))
+opc.write(('Channel2.Device1.Y7', 1))
 """==========================================================="""
 liveCamWindow = Tk()
 liveCamWindow.title('Live camera')
@@ -22,6 +25,18 @@ canvas_h = capture.get(cv2.CAP_PROP_FRAME_HEIGHT) // 3
 canvas_w = capture.get(cv2.CAP_PROP_FRAME_WIDTH) // 3
 canvas = Canvas(liveCamWindow, height=canvas_h, width=canvas_w)
 canvas.pack()
+
+
+def set_initial_state_button():
+    global previous_fen
+    cv2.imwrite('.\\Camera\\temp.jpg', input_image)
+    cx, cy, cname = define_chess_champ()
+    previous_fen = set_initial_state(cx, cy, cname)
+    opc.write(('Channel2.Device1.Y7', 1))
+
+
+initial_button = Button(liveCamWindow, text='Set Initial State', command=set_initial_state_button)
+initial_button.pack()
 
 
 def setup_board_button():
@@ -38,11 +53,12 @@ previous_fen = ''
 
 def take_turn_button():
     global previous_fen
+    opc.write(('Channel2.Device1.Y7', 0))  # tắt đèn vàng báo đã bấm nút
     cv2.imwrite('.\\Camera\\temp.jpg', input_image)
     cx, cy, cname = define_chess_champ()
     if previous_fen == '':
         previous_fen = 'rheakaehr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RHEAKAEHR'
-        previous_fen = 'r1ek1a3/1R2a3/4c3e/p1p1C3p/9/9/P1H1H1p1P/7C1/9/2EAKAE2'
+        # previous_fen = ''
     previous_fen = play_chess(previous_fen, cx, cy, cname, level, go_first)
 
 

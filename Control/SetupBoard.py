@@ -106,7 +106,11 @@ def setup_board(chess_x_board, chess_y_board, chess_name):
             remove_conflict(u)
             process_move(u)
 
+    if len(setup_list) == 0:
+        return
     step = setup_list[0]
+
+    opc.write(('Channel2.Device1.Y7', 0))
     home2start(step[0], step[1])
     for i in range(len(setup_list) - 1):
         step = setup_list[i]
