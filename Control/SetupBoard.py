@@ -7,11 +7,16 @@ from PLCControl.PLCControl import *
 from Control.DefineChessChamp import *
 
 #                r    h    e    a    k    a    e    h    r    c    c    p    p    p    p    p    P    P    P    P    P    C    C    R   H   E    A    K    A    E    H    R
-desx = np.array([22,  61,  102, 143, 184, 225, 266, 307, 348, 61,  307, 20,  102, 184, 266, 348, 20,  102, 184, 266, 348, 61,  307, 22, 61, 102, 143, 184, 225, 266, 307, 348])
-desy = np.array([387, 387, 387, 387, 387, 387, 387, 387, 387, 307, 307, 266, 266, 266, 266, 266, 143, 143, 143, 143, 143, 102, 102, 22, 20, 21,  21,  21,  21,  21,  21,  21])
-desname = np.array([2, 5,  3,   0,   4,   0,   3,   5,   2,   1,   1,   6,   6,   6,   6,   6,   13,  13,  13,  13,  13,  8,   8,   9,  12, 10,  7,   11,  7,   10,  12,  9])
-prio = np.array([5, 4, 5, 5, 5, 5, 3, 0, 1, 0, 0, 0, 0, 2])
-min_dis_chesschamp = 25
+desx = np.array(
+    [22, 61, 102, 143, 184, 225, 266, 307, 348, 61, 307, 20, 102, 184, 266, 348, 20, 102, 184, 266, 348, 61, 307, 22,
+     61, 102, 143, 184, 225, 266, 307, 348])
+desy = np.array(
+    [387, 387, 387, 387, 387, 387, 387, 387, 387, 307, 307, 266, 266, 266, 266, 266, 143, 143, 143, 143, 143, 102, 102,
+     22, 20, 21, 21, 21, 21, 21, 21, 21])
+desname = np.array(
+    [2, 5, 3, 0, 4, 0, 3, 5, 2, 1, 1, 6, 6, 6, 6, 6, 13, 13, 13, 13, 13, 8, 8, 9, 12, 10, 7, 11, 7, 10, 12, 9])
+prio = np.array([1, 2, 1, 1, 1, 1, 3, 0, 2, 0, 0, 0, 0, 3])
+min_dis_chesschamp = 33
 maxint = 2000
 
 
@@ -59,11 +64,14 @@ def setup_board(chess_x_board, chess_y_board, chess_name):
                 print(chess_eng[srcname[i]], (srcx[i], srcy[i]), 'che', chess_eng[desname[j]])
     print('==============================================')
 
-    # def make_short_list(name):
-    #     if name =
-    # noinspection PyShadowingNames
+    # count_backup = 0
+    # backupx = [20, 61, 102]
+    # backupy = [61, 61, 61]
+
     def process_move(u):
-        short_list = [v for v in range(size) if desname[v] == srcname[u] and available_destination[v] and num_conflict_with[v] == 0]
+        # global count_backup
+        short_list = [v for v in range(size) if
+                      desname[v] == srcname[u] and available_destination[v] and num_conflict_with[v] == 0]
         # print(chess_eng[srcname[u]], short_list)
         v_save = -1
         min_dis = maxint
@@ -72,9 +80,9 @@ def setup_board(chess_x_board, chess_y_board, chess_name):
             if dis1 < min_dis:
                 min_dis = dis1
                 v_save = v
-        if v_save is None:
+        if v_save == -1:
             print('Lỗi xếp cờ')
-            exit()
+            return
         available_destination[v_save] = False
         in_right_place.append(u)
         print(chess_eng[srcname[u]], (srcx[u], srcy[u]), '->', (desx[v_save], desy[v_save]))
@@ -96,7 +104,8 @@ def setup_board(chess_x_board, chess_y_board, chess_name):
 
     for u in move_conflict:
         if u not in in_right_place:
-            remove_conflict(u)  # dọn trước khi đi, tránh trường hợp chỗ mới là chỗ ngay bên cạnh mình, thì sẽ dọn chỗ đó thành trống luôn
+            remove_conflict(
+                u)  # dọn trước khi đi, tránh trường hợp chỗ mới là chỗ ngay bên cạnh mình, thì sẽ dọn chỗ đó thành trống luôn
             process_move(u)
 
     print('---------------------')
@@ -107,7 +116,7 @@ def setup_board(chess_x_board, chess_y_board, chess_name):
             process_move(u)
 
     if len(setup_list) == 0:
-        return
+        exit()
     step = setup_list[0]
 
     opc.write(('Channel2.Device1.Y7', 0))

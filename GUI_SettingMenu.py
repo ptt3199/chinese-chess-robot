@@ -61,4 +61,4 @@ def get_setting():
 
     welcomeWindow.mainloop()
 
-    return go_first, game_type, level
+    return go_first, level

@@ -5090,3 +5090,357 @@
 05/09/2023 09:03:51 AM Chess Engine: the max highest depth by quiescence search is :12
 05/09/2023 09:03:51 AM Chess Engine: the number of searched node is :276825
 05/09/2023 09:03:51 AM Chess Engine: send move to client:51915<-----------------------------------
+05/09/2023 11:28:29 AM Chess Engine: Receive FEN from client: 1h3k3/4a4/9/2p6/9/9/2P6/9/9/2E1K4 w<----------------------------------
+05/09/2023 11:28:30 AM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/09/2023 11:28:30 AM Search: score is: -78
+05/09/2023 11:28:31 AM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/09/2023 11:28:31 AM Search: score is: -87
+05/09/2023 11:28:32 AM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/09/2023 11:28:32 AM Search: score is: -80
+05/09/2023 11:28:32 AM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/09/2023 11:28:32 AM Search: score is: -90
+05/09/2023 11:28:33 AM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/09/2023 11:28:33 AM Search: score is: -84
+05/09/2023 11:28:35 AM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/09/2023 11:28:35 AM Search: score is: -97
+05/09/2023 11:28:35 AM Chess Engine: the max fixed depth is :6
+05/09/2023 11:28:35 AM Chess Engine: the max highest depth by quiescence search is :7
+05/09/2023 11:28:35 AM Chess Engine: the number of searched node is :7716
+05/09/2023 11:28:35 AM Chess Engine: send move to client:41925<-----------------------------------
+05/11/2023 02:28:03 PM Chess Engine: Receive FEN from client: rheakaehr/9/1c2c4/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RHEAKAEHR w<----------------------------------
+05/11/2023 02:28:03 PM Chess Engine: the max fixed depth is :6
+05/11/2023 02:28:03 PM Chess Engine: the max highest depth by quiescence search is :0
+05/11/2023 02:28:03 PM Chess Engine: the number of searched node is :0
+05/11/2023 02:28:03 PM Chess Engine: send move to client:43466<-----------------------------------
+05/11/2023 02:28:14 PM Chess Engine: Receive FEN from client: rheakae1r/9/1c2c1h2/p1p1p1p1p/9/9/P1P1P1P1P/1C4HC1/9/RHEAKAE1R w<----------------------------------
+05/11/2023 02:28:14 PM Chess Engine: the max fixed depth is :6
+05/11/2023 02:28:14 PM Chess Engine: the max highest depth by quiescence search is :0
+05/11/2023 02:28:14 PM Chess Engine: the number of searched node is :0
+05/11/2023 02:28:14 PM Chess Engine: send move to client:51915<-----------------------------------
+05/11/2023 02:28:26 PM Chess Engine: Receive FEN from client: rheakaer1/9/1c2c1h2/p1p1p1p1p/9/9/P1P1P1P1P/1C4HC1/9/RHEAKAER1 w<----------------------------------
+05/11/2023 02:28:26 PM Chess Engine: the max fixed depth is :6
+05/11/2023 02:28:26 PM Chess Engine: the max highest depth by quiescence search is :0
+05/11/2023 02:28:26 PM Chess Engine: the number of searched node is :0
+05/11/2023 02:28:26 PM Chess Engine: send move to client:42436<-----------------------------------
+05/11/2023 02:28:36 PM Chess Engine: Receive FEN from client: rheakae2/9/1c2c1h2/p1p1p1p1p/9/9/P1P1P1PrP/1CH3HC1/9/R1EAKAER1 w<----------------------------------
+05/11/2023 02:28:36 PM Chess Engine: the max fixed depth is :6
+05/11/2023 02:28:36 PM Chess Engine: the max highest depth by quiescence search is :0
+05/11/2023 02:28:36 PM Chess Engine: the number of searched node is :0
+05/11/2023 02:28:36 PM Chess Engine: send move to client:43946<-----------------------------------
+05/11/2023 02:28:51 PM Chess Engine: Receive FEN from client: rheakae2/9/1c2c1h2/p1p1p1p1p/9/9/P1P1P1r1P/1CH3H1C/9/R1EAKAER1 w<----------------------------------
+05/11/2023 02:28:52 PM Chess Engine: the max fixed depth is :6
+05/11/2023 02:28:52 PM Chess Engine: the max highest depth by quiescence search is :0
+05/11/2023 02:28:52 PM Chess Engine: the number of searched node is :0
+05/11/2023 02:28:52 PM Chess Engine: send move to client:48043<-----------------------------------
+05/11/2023 02:29:09 PM Chess Engine: Receive FEN from client: rheakae2/9/1c2c1h2/p1p1p3p/6p2/9/P1P1P1r1P/1CH3H2/8C/R1EAKAER1 w<----------------------------------
+05/11/2023 02:29:09 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:29:09 PM Search: score is: -4
+05/11/2023 02:29:10 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:29:10 PM Search: score is: -18
+05/11/2023 02:29:10 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:29:10 PM Search: score is: 2
+05/11/2023 02:29:16 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:29:16 PM Search: score is: -15
+05/11/2023 02:29:16 PM Chess Engine: the max fixed depth is :4
+05/11/2023 02:29:16 PM Chess Engine: the max highest depth by quiescence search is :20
+05/11/2023 02:29:16 PM Chess Engine: the number of searched node is :143456
+05/11/2023 02:29:16 PM Chess Engine: send move to client:47547<-----------------------------------
+05/11/2023 02:29:29 PM Chess Engine: Receive FEN from client: rheakae2/9/1c2c1h2/p1p1p3p/6p2/9/P1P1Pr2P/1CH3H2/6C2/R1EAKAER1 w<----------------------------------
+05/11/2023 02:29:29 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:29:29 PM Search: score is: -5
+05/11/2023 02:29:30 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:29:30 PM Search: score is: -15
+05/11/2023 02:29:30 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:29:30 PM Search: score is: 1
+05/11/2023 02:29:35 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:29:35 PM Search: score is: -16
+05/11/2023 02:29:35 PM Chess Engine: the max fixed depth is :4
+05/11/2023 02:29:35 PM Chess Engine: the max highest depth by quiescence search is :18
+05/11/2023 02:29:35 PM Chess Engine: the number of searched node is :115637
+05/11/2023 02:29:35 PM Chess Engine: send move to client:31161<-----------------------------------
+05/11/2023 02:30:03 PM Chess Engine: Receive FEN from client: rheaka3/9/1c2c1h1e/p1p1p3p/6C2/9/P1P1Pr2P/1CH3H2/9/R1EAKAER1 w<----------------------------------
+05/11/2023 02:30:03 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:30:03 PM Search: score is: 8
+05/11/2023 02:30:03 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:30:03 PM Search: score is: -6
+05/11/2023 02:30:04 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:30:04 PM Search: score is: 12
+05/11/2023 02:30:08 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:30:08 PM Search: score is: -12
+05/11/2023 02:30:30 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:30:30 PM Search: score is: 10
+05/11/2023 02:30:30 PM Chess Engine: the max fixed depth is :5
+05/11/2023 02:30:30 PM Chess Engine: the max highest depth by quiescence search is :17
+05/11/2023 02:30:30 PM Chess Engine: the number of searched node is :660198
+05/11/2023 02:30:30 PM Chess Engine: send move to client:27001<-----------------------------------
+05/11/2023 02:30:42 PM Chess Engine: Receive FEN from client: rheaka3/9/1c2c1h1e/p3p1C1p/2p6/9/P1P1Pr2P/1CH3H2/9/R1EAKAER1 w<----------------------------------
+05/11/2023 02:30:43 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:30:43 PM Search: score is: 5
+05/11/2023 02:30:43 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:30:43 PM Search: score is: -9
+05/11/2023 02:30:44 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:30:44 PM Search: score is: 11
+05/11/2023 02:30:54 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:30:54 PM Search: score is: -9
+05/11/2023 02:30:54 PM Chess Engine: the max fixed depth is :4
+05/11/2023 02:30:54 PM Chess Engine: the max highest depth by quiescence search is :16
+05/11/2023 02:30:54 PM Chess Engine: the number of searched node is :244058
+05/11/2023 02:30:54 PM Chess Engine: send move to client:35497<-----------------------------------
+05/11/2023 02:31:10 PM Chess Engine: Receive FEN from client: rheaka3/9/1c2c1h1e/p3p1C1p/2p6/7H1/P1P1P3r/1CH6/9/R1EAKAER1 w<----------------------------------
+05/11/2023 02:31:10 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:31:10 PM Search: score is: 12
+05/11/2023 02:31:11 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:31:11 PM Search: score is: -5
+05/11/2023 02:31:11 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:31:11 PM Search: score is: 7
+05/11/2023 02:31:13 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:31:13 PM Search: score is: -6
+05/11/2023 02:31:33 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:31:33 PM Search: score is: 12
+05/11/2023 02:31:33 PM Chess Engine: the max fixed depth is :5
+05/11/2023 02:31:33 PM Chess Engine: the max highest depth by quiescence search is :20
+05/11/2023 02:31:33 PM Chess Engine: the number of searched node is :529941
+05/11/2023 02:31:33 PM Chess Engine: send move to client:46019<-----------------------------------
+05/11/2023 02:31:47 PM Chess Engine: Receive FEN from client: rheaka3/9/1c2c1h1e/p3p1C1p/2p6/7Hr/P1P1P4/1CH6/R8/2EAKAER1 w<----------------------------------
+05/11/2023 02:31:48 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:31:48 PM Search: score is: 16
+05/11/2023 02:31:48 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:31:48 PM Search: score is: 7
+05/11/2023 02:31:49 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:31:49 PM Search: score is: 19
+05/11/2023 02:31:51 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:31:51 PM Search: score is: 4
+05/11/2023 02:32:09 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:32:09 PM Search: score is: 30
+05/11/2023 02:32:09 PM Chess Engine: the max fixed depth is :5
+05/11/2023 02:32:09 PM Chess Engine: the max highest depth by quiescence search is :18
+05/11/2023 02:32:09 PM Chess Engine: the number of searched node is :514970
+05/11/2023 02:32:09 PM Chess Engine: send move to client:46771<-----------------------------------
+05/11/2023 02:32:21 PM Chess Engine: Receive FEN from client: r1eaka3/9/1ch1c1h1e/p3p1C1p/2p6/7Hr/P1P1P4/1CH6/3R5/2EAKAER1 w<----------------------------------
+05/11/2023 02:32:21 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:32:21 PM Search: score is: 28
+05/11/2023 02:32:21 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:32:21 PM Search: score is: 0
+05/11/2023 02:32:22 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:32:22 PM Search: score is: 30
+05/11/2023 02:32:25 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:32:25 PM Search: score is: 7
+05/11/2023 02:32:45 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:32:45 PM Search: score is: 35
+05/11/2023 02:32:45 PM Chess Engine: the max fixed depth is :5
+05/11/2023 02:32:45 PM Chess Engine: the max highest depth by quiescence search is :19
+05/11/2023 02:32:45 PM Chess Engine: the number of searched node is :633562
+05/11/2023 02:32:45 PM Chess Engine: send move to client:30858<-----------------------------------
+05/11/2023 02:33:04 PM Chess Engine: Receive FEN from client: r1eaka3/9/1ch1c1h1e/p3p1C1p/2p2H3/6r2/P1P1P4/1CH6/3R5/2EAKAER1 w<----------------------------------
+05/11/2023 02:33:05 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:33:05 PM Search: score is: 30
+05/11/2023 02:33:05 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:33:05 PM Search: score is: 7
+05/11/2023 02:33:05 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:33:05 PM Search: score is: 37
+05/11/2023 02:33:07 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:33:07 PM Search: score is: 11
+05/11/2023 02:33:19 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:33:19 PM Search: score is: 40
+05/11/2023 02:33:19 PM Chess Engine: the max fixed depth is :5
+05/11/2023 02:33:19 PM Chess Engine: the max highest depth by quiescence search is :18
+05/11/2023 02:33:19 PM Chess Engine: the number of searched node is :356839
+05/11/2023 02:33:19 PM Chess Engine: send move to client:27338<-----------------------------------
+05/11/2023 02:33:39 PM Chess Engine: Receive FEN from client: r1eaka3/9/1ch1c1h1e/p5CRp/2p1pH3/6r2/P1P1P4/1CH6/3R5/2EAKAE2 w<----------------------------------
+05/11/2023 02:33:39 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:33:39 PM Search: score is: 90
+05/11/2023 02:33:40 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:33:40 PM Search: score is: 90
+05/11/2023 02:33:40 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:33:40 PM Search: score is: 110
+05/11/2023 02:33:42 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:33:42 PM Search: score is: 83
+05/11/2023 02:33:51 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:33:51 PM Search: score is: 99
+05/11/2023 02:33:51 PM Chess Engine: the max fixed depth is :5
+05/11/2023 02:33:51 PM Chess Engine: the max highest depth by quiescence search is :19
+05/11/2023 02:33:51 PM Chess Engine: the number of searched node is :312255
+05/11/2023 02:33:51 PM Chess Engine: send move to client:22904<-----------------------------------
+05/11/2023 02:34:09 PM Chess Engine: Receive FEN from client: r1eaka3/9/1ch1c1H1e/p5CRp/2p1p4/9/P1P1P4/1CH6/3R5/2EAKAr2 w<----------------------------------
+05/11/2023 02:34:10 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:34:10 PM Search: score is: 110
+05/11/2023 02:34:10 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:34:10 PM Search: score is: 85
+05/11/2023 02:34:11 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:34:11 PM Search: score is: 99
+05/11/2023 02:34:15 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:34:15 PM Search: score is: 81
+05/11/2023 02:34:15 PM Chess Engine: the max fixed depth is :4
+05/11/2023 02:34:15 PM Chess Engine: the max highest depth by quiescence search is :15
+05/11/2023 02:34:15 PM Chess Engine: the number of searched node is :111039
+05/11/2023 02:34:15 PM Chess Engine: send move to client:34486<-----------------------------------
+05/11/2023 02:34:36 PM Chess Engine: Receive FEN from client: 2eaka3/r8/1ch1c1H1e/p5CRp/2p1p4/3R5/P1P1P4/1CH6/9/2EAKAr2 w<----------------------------------
+05/11/2023 02:34:37 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:34:37 PM Search: score is: 104
+05/11/2023 02:34:37 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:34:37 PM Search: score is: 81
+05/11/2023 02:34:38 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:34:38 PM Search: score is: 101
+05/11/2023 02:34:42 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:34:42 PM Search: score is: 78
+05/11/2023 02:34:42 PM Chess Engine: the max fixed depth is :4
+05/11/2023 02:34:42 PM Chess Engine: the max highest depth by quiescence search is :17
+05/11/2023 02:34:42 PM Chess Engine: the number of searched node is :99937
+05/11/2023 02:34:42 PM Chess Engine: send move to client:42949<-----------------------------------
+05/11/2023 02:35:12 PM Chess Engine: Receive FEN from client: 2eaka3/r8/1ch1c1H1e/p5CRp/2p1p4/3R5/P1P1P4/1CH1E4/9/3AKA2r w<----------------------------------
+05/11/2023 02:35:12 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:35:12 PM Search: score is: 108
+05/11/2023 02:35:13 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:35:13 PM Search: score is: 85
+05/11/2023 02:35:13 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:35:13 PM Search: score is: 97
+05/11/2023 02:35:16 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:35:16 PM Search: score is: 87
+05/11/2023 02:35:28 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:35:28 PM Search: score is: 95
+05/11/2023 02:35:28 PM Chess Engine: the max fixed depth is :5
+05/11/2023 02:35:28 PM Chess Engine: the max highest depth by quiescence search is :22
+05/11/2023 02:35:28 PM Chess Engine: the number of searched node is :337740
+05/11/2023 02:35:28 PM Chess Engine: send move to client:25961<-----------------------------------
+05/11/2023 02:35:46 PM Chess Engine: Receive FEN from client: 2eaka3/5r3/1ch1c1H1e/p1C4Rp/2p1p4/3R5/P1P1P4/1CH1E4/9/3AKA2r w<----------------------------------
+05/11/2023 02:35:47 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:35:47 PM Search: score is: 96
+05/11/2023 02:35:47 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:35:47 PM Search: score is: 91
+05/11/2023 02:35:47 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:35:47 PM Search: score is: 109
+05/11/2023 02:35:48 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:35:48 PM Search: score is: 81
+05/11/2023 02:35:53 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:35:53 PM Search: score is: 98
+05/11/2023 02:35:53 PM Chess Engine: the max fixed depth is :5
+05/11/2023 02:35:53 PM Chess Engine: the max highest depth by quiescence search is :16
+05/11/2023 02:35:53 PM Chess Engine: the number of searched node is :120119
+05/11/2023 02:35:53 PM Chess Engine: send move to client:13669<-----------------------------------
+05/11/2023 02:36:11 PM Chess Engine: Receive FEN from client: 2C1ka3/4ar3/1ch1c1H1e/p6Rp/2p1p4/3R5/P1P1P4/1CH1E4/9/3AKA2r w<----------------------------------
+05/11/2023 02:36:11 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:36:11 PM Search: score is: 109
+05/11/2023 02:36:12 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:36:12 PM Search: score is: 81
+05/11/2023 02:36:12 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:36:12 PM Search: score is: 98
+05/11/2023 02:36:13 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:36:13 PM Search: score is: 82
+05/11/2023 02:36:21 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:36:21 PM Search: score is: 96
+05/11/2023 02:36:21 PM Chess Engine: the max fixed depth is :5
+05/11/2023 02:36:21 PM Chess Engine: the max highest depth by quiescence search is :17
+05/11/2023 02:36:21 PM Chess Engine: the number of searched node is :181202
+05/11/2023 02:36:21 PM Chess Engine: send move to client:47046<-----------------------------------
+05/11/2023 02:36:56 PM Chess Engine: Receive FEN from client: 2C1ka3/4ar3/c1h1c1H1e/p6Rp/2p1p4/3R5/P1P1P4/1CH1E4/4A4/4KA2r w<----------------------------------
+05/11/2023 02:36:57 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:36:57 PM Search: score is: 111
+05/11/2023 02:36:57 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:36:57 PM Search: score is: 93
+05/11/2023 02:36:58 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:36:58 PM Search: score is: 121
+05/11/2023 02:37:04 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:37:04 PM Search: score is: 92
+05/11/2023 02:37:04 PM Chess Engine: the max fixed depth is :4
+05/11/2023 02:37:04 PM Chess Engine: the max highest depth by quiescence search is :15
+05/11/2023 02:37:04 PM Chess Engine: the number of searched node is :137796
+05/11/2023 02:37:04 PM Chess Engine: send move to client:30005<-----------------------------------
+05/11/2023 02:37:23 PM Chess Engine: Receive FEN from client: 4ka3/4ar3/2h1c1H1e/p6Rp/2C1p4/3R5/c1P1P4/1CH1E4/4A4/4KA2r w<----------------------------------
+05/11/2023 02:37:23 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:37:23 PM Search: score is: 118
+05/11/2023 02:37:23 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:37:23 PM Search: score is: 93
+05/11/2023 02:37:24 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:37:24 PM Search: score is: 123
+05/11/2023 02:37:29 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:37:29 PM Search: score is: 101
+05/11/2023 02:37:29 PM Chess Engine: the max fixed depth is :4
+05/11/2023 02:37:29 PM Chess Engine: the max highest depth by quiescence search is :17
+05/11/2023 02:37:29 PM Chess Engine: the number of searched node is :102803
+05/11/2023 02:37:29 PM Chess Engine: send move to client:17572<-----------------------------------
+05/11/2023 02:37:53 PM Chess Engine: Receive FEN from client: 3aka3/1C3r3/2h1c1H1e/p6Rp/2C1p4/3R5/c1P1P4/2H1E4/4A4/4KA2r w<----------------------------------
+05/11/2023 02:37:54 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:37:54 PM Search: score is: 124
+05/11/2023 02:37:54 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:37:54 PM Search: score is: 105
+05/11/2023 02:37:54 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:37:54 PM Search: score is: 124
+05/11/2023 02:37:58 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:37:58 PM Search: score is: 101
+05/11/2023 02:38:11 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:38:11 PM Search: score is: 120
+05/11/2023 02:38:11 PM Chess Engine: the max fixed depth is :5
+05/11/2023 02:38:11 PM Chess Engine: the max highest depth by quiescence search is :17
+05/11/2023 02:38:11 PM Chess Engine: the number of searched node is :356871
+05/11/2023 02:38:11 PM Chess Engine: send move to client:37797<-----------------------------------
+05/11/2023 02:38:29 PM Chess Engine: Receive FEN from client: 3aka3/1r7/2h1c1H1e/p6Rp/2C1p4/3R5/H1P1P4/4E4/4A4/4KA2r w<----------------------------------
+05/11/2023 02:38:29 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:38:29 PM Search: score is: 124
+05/11/2023 02:38:30 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:38:30 PM Search: score is: 101
+05/11/2023 02:38:30 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:38:30 PM Search: score is: 121
+05/11/2023 02:38:33 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:38:33 PM Search: score is: 95
+05/11/2023 02:38:47 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:38:47 PM Search: score is: 124
+05/11/2023 02:38:47 PM Chess Engine: the max fixed depth is :5
+05/11/2023 02:38:47 PM Chess Engine: the max highest depth by quiescence search is :17
+05/11/2023 02:38:47 PM Chess Engine: the number of searched node is :391031
+05/11/2023 02:38:47 PM Chess Engine: send move to client:42387<-----------------------------------
+05/11/2023 02:39:13 PM Chess Engine: Receive FEN from client: 3aka3/9/2h1c1H1e/p6Rp/2C1p4/3R5/2P1P4/1rH1E4/4A4/4KA2r w<----------------------------------
+05/11/2023 02:39:14 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:39:14 PM Search: score is: 126
+05/11/2023 02:39:14 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:39:14 PM Search: score is: 100
+05/11/2023 02:39:15 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:39:15 PM Search: score is: 180
+05/11/2023 02:39:20 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:39:20 PM Search: score is: 167
+05/11/2023 02:39:20 PM Chess Engine: the max fixed depth is :4
+05/11/2023 02:39:20 PM Chess Engine: the max highest depth by quiescence search is :15
+05/11/2023 02:39:20 PM Chess Engine: the number of searched node is :121859
+05/11/2023 02:39:20 PM Chess Engine: send move to client:22150<-----------------------------------
+05/11/2023 02:40:01 PM Chess Engine: Receive FEN from client: 3aka3/9/2hRc1H1e/p6Rp/2C1p4/9/2P1P4/2r1E4/4A4/4KA2r w<----------------------------------
+05/11/2023 02:40:01 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:40:01 PM Search: score is: 225
+05/11/2023 02:40:01 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:40:01 PM Search: score is: 212
+05/11/2023 02:40:01 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:40:01 PM Search: score is: 325
+05/11/2023 02:40:02 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:40:02 PM Search: score is: 312
+05/11/2023 02:40:04 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:40:04 PM Search: score is: 357
+05/11/2023 02:40:14 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:40:14 PM Search: score is: 314
+05/11/2023 02:40:14 PM Chess Engine: the max fixed depth is :6
+05/11/2023 02:40:14 PM Chess Engine: the max highest depth by quiescence search is :15
+05/11/2023 02:40:14 PM Chess Engine: the number of searched node is :240342
+05/11/2023 02:40:14 PM Chess Engine: send move to client:22358<-----------------------------------
+05/11/2023 02:40:39 PM Chess Engine: Receive FEN from client: 4ka3/4a4/2h1R1H1e/p6Rp/2C1p4/9/2P1P4/2r1E4/4A4/4KA2r w<----------------------------------
+05/11/2023 02:40:40 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:40:40 PM Search: score is: 325
+05/11/2023 02:40:40 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:40:40 PM Search: score is: 312
+05/11/2023 02:40:40 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:40:40 PM Search: score is: 357
+05/11/2023 02:40:41 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:40:41 PM Search: score is: 327
+05/11/2023 02:40:43 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:40:43 PM Search: score is: 368
+05/11/2023 02:40:56 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:40:56 PM Search: score is: 334
+05/11/2023 02:40:56 PM Chess Engine: the max fixed depth is :6
+05/11/2023 02:40:56 PM Chess Engine: the max highest depth by quiescence search is :16
+05/11/2023 02:40:56 PM Chess Engine: the number of searched node is :332590
+05/11/2023 02:40:56 PM Chess Engine: send move to client:26730<-----------------------------------
+05/11/2023 02:41:19 PM Chess Engine: Receive FEN from client: 4kae2/4a4/2h1R1H2/p4R2p/2C1p4/9/2P1P4/2r1E4/4A4/4KA2r w<----------------------------------
+05/11/2023 02:41:19 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:41:19 PM Search: score is: 197
+05/11/2023 02:41:20 PM Search: used algorithms: AlphaBeta, moveOrdering, quiescence search, transposition table 
+05/11/2023 02:41:20 PM Search: score is: 9999
+05/11/2023 02:41:20 PM Chess Engine: the max fixed depth is :2
+05/11/2023 02:41:20 PM Chess Engine: the max highest depth by quiescence search is :5
+05/11/2023 02:41:20 PM Chess Engine: the number of searched node is :447
+05/11/2023 02:41:20 PM Chess Engine: send move to client:14440<-----------------------------------

@@ -2,13 +2,14 @@
 from GUI_SettingMenu import *
 from Control.PlayChess import *
 from Control.SetupBoard import *
+from Control.SetInitialState import *
 from Const.VisionConst import *
 
 """==========================================================="""
-go_first, game_type, level = get_setting()
-print(go_first)
-print(game_type)
-print(level)
+go_first, level = get_setting()
+# print(go_first)
+# print(game_type)
+# print(level)
 
 opc.write(('Channel2.Device1.Y11', 0))
 opc.write(('Channel2.Device1.Y7', 1))

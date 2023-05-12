@@ -1,4 +1,8 @@
+import numpy as np
+
 from Control.ValidateState import *
+from Const.VisionConst import *
+from Utils.VisionUtils import *
 
 
 def set_initial_state(chess_x_board, chess_y_board, chess_name):
@@ -15,4 +19,7 @@ def set_initial_state(chess_x_board, chess_y_board, chess_name):
     if not valid_position(state):
         print('Lỗi: Trạng thái không hợp lệ')
         return None
+    print('Trạng thái bàn cờ:')
+    print(state)
+    print('============================================================')
     return matrix2fen(state)
