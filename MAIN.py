@@ -59,7 +59,7 @@ def take_turn_button():
     cx, cy, cname = define_chess_champ()
     if previous_fen == '':
         previous_fen = 'rheakaehr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RHEAKAEHR'
-        # previous_fen = ''
+        # previous_fen = 'rheakae1r/9/4c1h2/p1p1p1p1p/9/9/P3P1c1P/1CH3HC1/3R5/2EAKAER1'
     previous_fen = play_chess(previous_fen, cx, cy, cname, level, go_first)
 
 
