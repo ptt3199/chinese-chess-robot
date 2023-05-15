@@ -7,9 +7,7 @@ from Const.VisionConst import *
 
 """==========================================================="""
 go_first, level = get_setting()
-# print(go_first)
-# print(game_type)
-# print(level)
+
 
 opc.write(('Channel2.Device1.Y11', 0))
 opc.write(('Channel2.Device1.Y7', 1))

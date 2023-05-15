@@ -98,3 +98,5 @@ def move_in_state(mv):
     dst_x = int(dst / 16) - 3
     dst_y = int(dst % 16) - 3
     return src_x, src_y, dst_x, dst_y
+
+

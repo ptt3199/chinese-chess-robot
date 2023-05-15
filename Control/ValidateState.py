@@ -473,24 +473,34 @@ def valid_move_cannon(st, si, sj, di, dj):  # ok
     # Chạy dọc theo từng trục, nếu có != 1 quân cờ cản đường thì trả về False
     count_block = 0
     if si == di:  # di ngang
-        for idj in range(sj + 1, dj):
-            if st[si, idj] != '.':
-                count_block += 1
+        if sj < dj:
+            for idj in range(sj + 1, dj):
+                if st[si, idj] != '.':
+                    count_block += 1
+        else:
+            for idj in range(dj + 1, sj):
+                if st[si, idj] != '.':
+                    count_block += 1
     elif sj == dj:  # đi dọc
-        for idi in range(si + 1, di):
-            if st[idi, sj] != '.':
-                count_block += 1
+        if si < di:
+            for idi in range(si + 1, di):
+                if st[idi, sj] != '.':
+                    count_block += 1
+        else:
+            for idi in range(di + 1, si):
+                if st[idi, sj] != '.':
+                    count_block += 1
     return count_block == 1
 
 
 def valid_move_king(st, si, sj, di, dj):
     # Nếu không thẳng hàng thì sai
     if si != di and sj != dj:
-        print('Lỗi: Tướng không đi đường thẳng')
+        print('! Lỗi: Tướng không đi đường thẳng')
         return False
     # Nếu đi khác 1 bước
     if (abs(si - di) != 1 and sj == dj) or (abs(sj - dj) != 1 and si == di):
-        print('Lỗi: Tướng đi nhiều hơn 1 bước')
+        print('! Lỗi: Tướng đi nhiều hơn 1 bước')
         return False
     # Nếu lộ mặt tướng -> đã xét ở valid_position
     # Nếu đi vào ô bị chiếu
@@ -500,9 +510,9 @@ def valid_move_king(st, si, sj, di, dj):
 
 
 def valid_move(previous_state, state):
-    print('Define and check valid move:...')
+    print('Xác định và kiểm tra tính chính xác của nước đi:...')
     if not valid_position(state):
-        print('Trạng thái bàn cờ không hợp lệ: Thừa quân hoặc quân không đúng vị trí cho phép')
+        print('! Trạng thái bàn cờ không hợp lệ: Thừa quân hoặc quân không đúng vị trí cho phép')
         return False
 
     champ_name = ''
@@ -566,8 +576,8 @@ def valid_move(previous_state, state):
 
 #  for debugging
 # from Utils.VisionUtils import *
-# pfen = 'r1e1ka3/1R2a4/4c3e/p1p1C3p/9/9/P1H1H1p1P/7C1/9/2EAKAE2'
+# pfen = 'rheakae1r/9/4c1h2/p1p1p1p1p/9/9/P3P1c1P/1CH3HC1/3R5/2EAKAER1'
 # pst = fen2matrix(pfen)
-# fen = 'r1ek1a3/1R2a4/4c3e/p1p1C3p/9/9/P1H1H1p1P/7C1/9/2EAKAE2'
+# fen = 'rheakae1r/9/4c1h2/p1p1p1p1p/9/9/c3P3P/1CH3HC1/3R5/2EAKAER1'
 # st = fen2matrix(fen)
-# valid_move(pst, st)
+# print(valid_move(pst, st))
