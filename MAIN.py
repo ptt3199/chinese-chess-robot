@@ -51,14 +51,18 @@ previous_fen = ''
 
 
 def take_turn_button():
-    global previous_fen
+    global previous_fen, go_first
     opc.write(('Channel2.Device1.Y7', 0))  # tắt đèn vàng báo đã bấm nút
     cv2.imwrite('.\\Camera\\temp.jpg', input_image)
     cx, cy, cname = define_chess_champ()
+    if go_first == 2:
+        if previous_fen == '':
+            previous_fen = 'rheakaehr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RHEAKAEHR'
+        previous_fen = play_chess_1_time_robot_first(previous_fen, cx, cy, cname, level)
+        go_first = 1
     if previous_fen == '':
         previous_fen = 'rheakaehr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RHEAKAEHR'
-        # previous_fen = 'rheakae1r/9/4c1h2/p1p1p1p1p/9/9/P3P1c1P/1CH3HC1/3R5/2EAKAER1'
-    previous_fen = play_chess(previous_fen, cx, cy, cname, level, go_first)
+    previous_fen = play_chess(previous_fen, cx, cy, cname, level)
 
 
 turn_button = Button(liveCamWindow, text='Your turn', command=take_turn_button)
