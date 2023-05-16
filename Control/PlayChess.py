@@ -129,10 +129,18 @@ def play_chess_1_time_robot_first(previous_fen, chess_x_board, chess_y_board, ch
         capture(x1, y1, x2, y2)
     opc.write(('Channel2.Device1.Y7', 1))  # bật đèn lượt người chơi
 
+    for idi in range(0, 2):
+        for idj in range(3, 6):
+            if state[idi, idj] == 'k':
+                if not king_is_not_checked(state, idi, idj):
+                    playsound('Sound\\chieutuong.wav')
+                    break
+
     state[dst_x][dst_y] = state[src_x][src_y]
     state[src_x][src_y] = '.'
     print('Trạng thái mới: ', fen_receive)
     fen2matrix_cn(fen_receive, mov)
+
     print('Lượt người chơi!')
     print('=====================================')
     playsound('Sound\\luotcuaban.wav')

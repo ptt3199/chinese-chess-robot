@@ -105,8 +105,8 @@ def setup_board(chess_x_board, chess_y_board, chess_name):
 
     for u in move_conflict:
         if u not in in_right_place:
-            remove_conflict(
-                u)  # dọn trước khi đi, tránh trường hợp chỗ mới là chỗ ngay bên cạnh mình, thì sẽ dọn chỗ đó thành trống luôn
+            remove_conflict(u)
+            # dọn trước khi đi, tránh trường hợp chỗ mới là chỗ ngay bên cạnh mình, thì sẽ dọn chỗ đó thành trống luôn
             process_move(u)
 
     print('---------------------')
