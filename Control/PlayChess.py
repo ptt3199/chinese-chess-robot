@@ -1,3 +1,5 @@
+from playsound import playsound
+
 from Const.VisionConst import *
 from PLCControl.PLCControl import *
 from Utils.VisionUtils import *
@@ -16,6 +18,7 @@ def get_state(chess_x_board, chess_y_board, chess_name):
     srcx, srcy, srcname = np.copy(chess_x_board), np.copy(chess_y_board), np.copy(chess_name)
     if not on_cross(srcx, srcy):
         print('Quân cờ không đặt trên các đường giao')
+        playsound('Sound\\bancosai.wav')
         return None, None, None
 
     size = len(srcname)
@@ -35,6 +38,7 @@ def play_chess(previous_fen, chess_x_board, chess_y_board, chess_name, level=2):
     if state is None or not valid_move(previous_state, state):
         print('Nước đi không hợp lệ')
         print('===============================')
+        playsound('Sound\\nuocdisai.wav')
 
         opc.write(('Channel2.Device1.Y11', 1))  # bật đèn đỏ báo nước đi sai
 
@@ -60,6 +64,7 @@ def play_chess(previous_fen, chess_x_board, chess_y_board, chess_name, level=2):
     src_x, src_y, dst_x, dst_y = move_in_state(mov)
     print('Nước đi của máy: ', state[src_x][src_y], (src_x, src_y), '->', (dst_x, dst_y))
 
+    playsound('Sound\\luotcuarobot.wav')
     x1, y1 = real_loc_y[src_x][src_y], real_loc_x[src_x][src_y]
     if state[dst_x][dst_y] == '.':
         x2, y2 = dst_y * 41 + 20, (9 - dst_x) * 41 + 20
@@ -77,6 +82,7 @@ def play_chess(previous_fen, chess_x_board, chess_y_board, chess_name, level=2):
     fen2matrix_cn(fen_receive, mov)
     print('Lượt người chơi!')
     print('=====================================')
+    playsound('Sound\\luotcuaban.wav')
 
     return matrix2fen(state)
 
@@ -86,6 +92,7 @@ def play_chess_1_time_robot_first(previous_fen, chess_x_board, chess_y_board, ch
     if state is None:
         print('Trạng thái bàn cờ không hợp lệ')
         print('===============================')
+        playsound('Sound\\nuocdisai.wav')
 
         opc.write(('Channel2.Device1.Y11', 1))  # bật đèn đỏ báo nước đi sai
 
@@ -110,6 +117,7 @@ def play_chess_1_time_robot_first(previous_fen, chess_x_board, chess_y_board, ch
     src_x, src_y, dst_x, dst_y = move_in_state(mov)
     print('Nước đi của máy: ', state[src_x][src_y], (src_x, src_y), '->', (dst_x, dst_y))
 
+    playsound('Sound\\luotcuarobot.wav')
     x1, y1 = real_loc_y[src_x][src_y], real_loc_x[src_x][src_y]
     if state[dst_x][dst_y] == '.':
         x2, y2 = dst_y * 41 + 20, (9 - dst_x) * 41 + 20
@@ -127,5 +135,6 @@ def play_chess_1_time_robot_first(previous_fen, chess_x_board, chess_y_board, ch
     fen2matrix_cn(fen_receive, mov)
     print('Lượt người chơi!')
     print('=====================================')
+    playsound('Sound\\luotcuaban.wav')
 
     return matrix2fen(state)

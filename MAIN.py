@@ -1,3 +1,4 @@
+
 """===================== Homemade library ===================="""
 from GUI_SettingMenu import *
 from Control.PlayChess import *
@@ -51,6 +52,7 @@ previous_fen = ''
 
 
 def take_turn_button():
+    # noinspection PyGlobalUndefined
     global previous_fen, go_first
     opc.write(('Channel2.Device1.Y7', 0))  # tắt đèn vàng báo đã bấm nút
     cv2.imwrite('.\\Camera\\temp.jpg', input_image)

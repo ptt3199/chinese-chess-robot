@@ -1,5 +1,6 @@
 import numpy as np
 from math import sqrt
+from playsound import playsound
 
 from Const.VisionConst import chess_eng
 from CalibrateCamera.Calibrate import *
@@ -120,6 +121,7 @@ def setup_board(chess_x_board, chess_y_board, chess_name):
     step = setup_list[0]
 
     opc.write(('Channel2.Device1.Y7', 0))
+    playsound('Sound\\batdauxepco.wav')
     home2start(step[0], step[1])
     for i in range(len(setup_list) - 1):
         step = setup_list[i]
@@ -129,6 +131,7 @@ def setup_board(chess_x_board, chess_y_board, chess_name):
     step = setup_list[-1]
     pick_drop(step[0], step[1], step[2], step[3])
     end2home(step[2], step[3])
+    playsound('Sound\\xepcoxong.wav')
 
 
 """for debugging"""
