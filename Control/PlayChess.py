@@ -50,13 +50,13 @@ def play_chess(previous_fen, chess_x_board, chess_y_board, chess_name, level=2):
     print(state)
 
     fen_send = matrix2fen(state)
-    ply = 5  # gía trị mặc định
+    ply = 3  # gía trị mặc định
     if level == 1:
         ply = 3
     elif level == 2:
-        ply = 6
+        ply = 4
     elif level == 3:
-        ply = 9
+        ply = 5
     data = [fen_send + ' w', ply]
     client_engine.send(data)
 
@@ -106,11 +106,11 @@ def play_chess_1_time_robot_first(previous_fen, chess_x_board, chess_y_board, ch
     fen_send = matrix2fen(state)
     ply = 5  # gía trị mặc định
     if level == 1:
-        ply = 1
-    elif level == 2:
-        ply = 2
-    elif level == 3:
         ply = 3
+    elif level == 2:
+        ply = 4
+    elif level == 3:
+        ply = 5
     data = [fen_send + ' w', ply]
     client_engine.send(data)
     [fen_receive, mov] = client_engine.receive()
@@ -147,3 +147,9 @@ def play_chess_1_time_robot_first(previous_fen, chess_x_board, chess_y_board, ch
     playsound('Sound\\luotcuaban.wav')
 
     return matrix2fen(state)
+
+
+# for debugging
+# cx, cy, cname = define_chess_champ()
+# previous_fen = 'rheakaehr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RHEAKAEHR'
+# previous_fen = play_chess(previous_fen, cx, cy, cname, 3)

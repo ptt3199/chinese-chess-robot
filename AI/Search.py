@@ -20,7 +20,12 @@ class Search:
         self.position.fromFen(fen)
         self.logger = Logger(Search.__name__)
         self.transposition_table = []
-        self.limited_time_search = 5
+        if max_depth == 3:
+            self.limited_time_search = 1
+        elif max_depth == 4:
+            self.limited_time_search = 3
+        else:
+            self.limited_time_search = 20
         self.best_move = 0
         self.refutation_table = []
         for i in range(MAX_DEPTH):
