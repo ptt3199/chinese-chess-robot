@@ -62,9 +62,10 @@ def take_turn_button():
             previous_fen = 'rheakaehr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RHEAKAEHR'
         previous_fen = play_chess_1_time_robot_first(previous_fen, cx, cy, cname, level)
         go_first = 1
-    if previous_fen == '':
-        previous_fen = 'rheakaehr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RHEAKAEHR'
-    previous_fen = play_chess(previous_fen, cx, cy, cname, level)
+    else:
+        if previous_fen == '':
+            previous_fen = 'rheakaehr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RHEAKAEHR'
+        previous_fen = play_chess(previous_fen, cx, cy, cname, level)
 
 
 turn_button = Button(liveCamWindow, text='Your turn', command=take_turn_button)

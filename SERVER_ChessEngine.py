@@ -13,10 +13,10 @@ print('Connected')
 while True:
     data = s.receive()
     fen = data[0]
-    depth = data[1]
+    time_limit = data[1]
     logger.info("Receive FEN from client: " + fen + "<----------------------------------")
 
-    searchObj = Search(fen, depth)
+    searchObj = Search(fen, time_limit)
     # move = searchObj.search_root()
     move = searchObj.interative_depth_first_search()
     # move = searchObj.search_root_alpha_beta_tt(-MATE_VALUE, MATE_VALUE)
@@ -31,6 +31,12 @@ while True:
         "the max highest depth by quiescence search is :" + str(searchObj.position.depthByQuiesc))
     logger.info("the number of searched node is :" + str(searchObj.position.allNode))
     logger.info("send move to client:" + str(move) + "<-----------------------------------")
+
+    print('time search ', time_limit)
+    print("the max fixed depth is :" + str(searchObj.maxDepth))
+    print("the max highest depth by quiescence search is :" + str(searchObj.position.depthByQuiesc))
+    print("the number of searched node is :" + str(searchObj.position.allNode))
+    print("send move to client:" + str(move) + "<-----------------------------------")
 
     # send data back to client
     if move != 0:

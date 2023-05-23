@@ -106,12 +106,12 @@ def play_chess_1_time_robot_first(previous_fen, chess_x_board, chess_y_board, ch
     fen_send = matrix2fen(state)
     ply = 5  # gía trị mặc định
     if level == 1:
-        ply = 3
+        ply = 1
     elif level == 2:
-        ply = 6
+        ply = 2
     elif level == 3:
-        ply = 9
-    data = [fen_send + ' b', ply]
+        ply = 3
+    data = [fen_send + ' w', ply]
     client_engine.send(data)
     [fen_receive, mov] = client_engine.receive()
     src_x, src_y, dst_x, dst_y = move_in_state(mov)
@@ -127,6 +127,7 @@ def play_chess_1_time_robot_first(previous_fen, chess_x_board, chess_y_board, ch
         x2, y2 = real_loc_y[dst_x][dst_y], real_loc_x[dst_x][dst_y]
         print('Capture from ', (x1, y1), 'to', (x2, y2))
         capture(x1, y1, x2, y2)
+
     opc.write(('Channel2.Device1.Y7', 1))  # bật đèn lượt người chơi
 
     for idi in range(0, 2):

@@ -538,6 +538,9 @@ def valid_move(previous_state, state):
                     return False
     if champ_name == '':
         return False
+    # Nếu người chơi đi quân của robot
+    if champ_name in ['R', 'H', 'E', 'A', 'K', 'C', 'P']:
+        return False
     # Nếu ăn quân cùng phe
     black = ['a', 'c', 'e', 'h', 'k', 'p', 'r']
     red = ['A', 'C', 'E', 'H', 'K', 'P']

@@ -32,9 +32,9 @@ def define_chess_champ():
     image = cv2.imread('.\\Camera\\temp.jpg')
     image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)  # Convert to gray
     image = calibrate_remap_image(image)  # Calibrate image
-
+    cv2.imwrite('.\\Camera\\blah.jpg', image)
     image = image[top:bottom, left:right]  # Remove leftovers
-    # cv2.imwrite('.\\Camera\\blah.jpg', image)
+    cv2.imwrite('.\\Camera\\blahcrop.jpg', image)
     image = cv2.resize(image, (image_width, image_height))  # Need to rescale to 905:1010 = 368:411
     width, height = image.shape
 
