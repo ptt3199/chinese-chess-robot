@@ -24,7 +24,9 @@ maxint = 2000
 def setup_board(chess_x_board, chess_y_board, chess_name):
     srcx, srcy, srcname = np.copy(chess_x_board), np.copy(chess_y_board), np.copy(chess_name)
     size = len(srcname)
-
+    if size != 32:
+        print('Không đủ quân cờ trên bàn cờ hoặc quân cờ chưa được lật lên')
+        return
     # arrange: danh sách từ tung độ nhỏ đến tung độ lớn
     for i in range(size - 1):
         for j in range(i + 1, size):
@@ -68,9 +70,11 @@ def setup_board(chess_x_board, chess_y_board, chess_name):
     # count_backup = 0
     # backupx = [20, 61, 102]
     # backupy = [61, 61, 61]
+    error = 0
 
     def process_move(u):
         # global count_backup
+        global error
         short_list = [v for v in range(size) if
                       desname[v] == srcname[u] and available_destination[v] and num_conflict_with[v] == 0]
         # print(chess_eng[srcname[u]], short_list)
@@ -83,6 +87,7 @@ def setup_board(chess_x_board, chess_y_board, chess_name):
                 v_save = v
         if v_save == -1:
             print('Lỗi xếp cờ')
+            error = 1
             return
         available_destination[v_save] = False
         in_right_place.append(u)
@@ -120,18 +125,20 @@ def setup_board(chess_x_board, chess_y_board, chess_name):
         exit()
     step = setup_list[0]
 
-    opc.write(('Channel2.Device1.Y7', 0))
-    playsound('Sound\\batdauxepco.wav')
-    home2start(step[0], step[1])
-    for i in range(len(setup_list) - 1):
-        step = setup_list[i]
+    print(error)
+    if error == 1:
+        opc.write(('Channel2.Device1.Y7', 0))
+        playsound('Sound\\batdauxepco.wav')
+        home2start(step[0], step[1])
+        for i in range(len(setup_list) - 1):
+            step = setup_list[i]
+            pick_drop(step[0], step[1], step[2], step[3])
+            step2 = setup_list[i + 1]
+            point2point(step[2], step[3], step2[0], step2[1])
+        step = setup_list[-1]
         pick_drop(step[0], step[1], step[2], step[3])
-        step2 = setup_list[i + 1]
-        point2point(step[2], step[3], step2[0], step2[1])
-    step = setup_list[-1]
-    pick_drop(step[0], step[1], step[2], step[3])
-    end2home(step[2], step[3])
-    playsound('Sound\\xepcoxong.wav')
+        end2home(step[2], step[3])
+        playsound('Sound\\xepcoxong.wav')
 
 
 """for debugging"""

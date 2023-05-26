@@ -151,5 +151,5 @@ def play_chess_1_time_robot_first(previous_fen, chess_x_board, chess_y_board, ch
 
 # for debugging
 # cx, cy, cname = define_chess_champ()
-# previous_fen = 'rheakaehr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RHEAKAEHR'
+# previous_fen = '2ea5/3Ra4/3c1k3/p1p6/5HP2/9/P3H4/5C3/1C3K3/2EA4r'
 # previous_fen = play_chess(previous_fen, cx, cy, cname, 3)

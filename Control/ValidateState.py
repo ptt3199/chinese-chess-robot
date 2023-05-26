@@ -504,13 +504,14 @@ def valid_move_king(st, si, sj, di, dj):
         return False
     # Nếu lộ mặt tướng -> đã xét ở valid_position
     # Nếu đi vào ô bị chiếu
-    if king_is_not_checked(st, di, dj):
+    if not king_is_not_checked(st, di, dj):
         return False
     return True
 
 
 def valid_move(previous_state, state):
     print('Xác định và kiểm tra tính chính xác của nước đi:...')
+    print(state)
     if not valid_position(state):
         print('! Trạng thái bàn cờ không hợp lệ: Thừa quân hoặc quân không đúng vị trí cho phép')
         return False
@@ -551,7 +552,7 @@ def valid_move(previous_state, state):
         return False
 
     # Nếu khiến tướng bị chiếu
-    for idi in range(0, 2):
+    for idi in range(0, 3):
         for idj in range(3, 6):
             if state[idi, idj] == 'k':
                 if king_is_not_checked(state, idi, idj):

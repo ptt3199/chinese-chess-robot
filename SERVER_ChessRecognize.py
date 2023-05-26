@@ -56,6 +56,7 @@ def define_chess_champ():
     """prepare data for recognizing"""
     count_circle = 0
     data, chess_int, chess_x, chess_y = [], [], [], []
+    i = 0
     for circle in circles[0, :]:
         (x, y, _) = circle
         center = (x, y)
@@ -68,7 +69,10 @@ def define_chess_champ():
         cv2.circle(mask, center, radius, (255, 255, 255), thickness=-1)
         masked_im = cv2.bitwise_and(image, image, mask=mask)
         cropped_im = masked_im[y - radius:y + radius, x - radius:x + radius]
+
         binary_chess_champ = convert_binary(cv2.resize(cropped_im, (train_size, train_size)))
+        i += 1
+        cv2.imwrite('Camera\\' + str(i) + '.jpg', binary_chess_champ)
         data.append(img_to_array(binary_chess_champ))
     data = np.array(data)
     data = data / 255.0

@@ -25,7 +25,7 @@ class Search:
         elif max_depth == 4:
             self.limited_time_search = 2.5
         else:
-            self.limited_time_search = 15
+            self.limited_time_search = 10
         self.best_move = 0
         self.refutation_table = []
         for i in range(MAX_DEPTH):

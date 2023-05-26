@@ -5,18 +5,18 @@ CHESSMAN = {'k', 'a', 'e', 'r', 'c', 'h', 'p', 'K', 'A', 'E', 'R', 'C', 'H', 'P'
 # raw_bottom = 1037
 # raw_left = 540
 # raw_right = 1453
-raw_top = 61
-raw_bottom = 1061
-raw_left = 543
-raw_right = 1461
+raw_top = 47
+raw_bottom = 1038
+raw_left = 538
+raw_right = 1447
 resolution = (1920, 1080)
 
 # save model
 model_path = ".\\RecognizeModel"
 
 # recognize chess champ
-image_width = 895
-image_height = 1000
+image_width = 888
+image_height = 991
 image_train_size = 120
 
 # utils
